@@ -23,6 +23,7 @@ class Page(models.Model):
 	title = models.CharField(max_length=128)
 	url = models.URLField()
 	views= models.IntegerField(default=0)
+	when = models.DateTimeField('date created', auto_now_add=True)
 
 	#equals to __str__
 	def __unicode__(self):
@@ -30,7 +31,7 @@ class Page(models.Model):
 
 class UserProfile(models.Model):
 	"""
-	--> 
+	--> dedicated to ONG
 	"""
 	#this line is required. User model instance
 	user = models.OneToOneField(User)
@@ -42,4 +43,9 @@ class UserProfile(models.Model):
 	picture = models.ImageField(upload_to='profile_images/%Y/%m/%d',blank=True)
 
 	def __unicode__(self):
-		return self.user.username
+		return self.name
+
+class Denuncias(models.Model):
+	email = models.EmailFields(max_length=40)
+	title = models.CharField(max_length=128)
+	text = models.CharField(max_length=1000)
