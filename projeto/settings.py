@@ -67,13 +67,17 @@ DATABASES = {
     }
 }
 
+
+#HEROKU
+DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE']='django_postgrespool'
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Fortaleza'
 
 USE_I18N = True
 
@@ -82,7 +86,7 @@ USE_L10N = True
 USE_TZ = True
 
 ###############################################-HEROKU-######################################################
-DATABASES['default'] =  dj_database_url.config()
+
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 
@@ -109,3 +113,5 @@ LOGIN_URL = '/login/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
