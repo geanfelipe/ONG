@@ -2,11 +2,12 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.db.models import permalink
 import datetime
 
 class Category(models.Model):
-	name = models.CharField(max_length=128, unique=True)
-	slug = models.SlugField(unique=True)
+	name = models.CharField(max_length=128, unique=True, db_index=True)
+	slug = models.SlugField(unique=True,db_index=True)
 	
 	def save(self, *args, **kwargs):
 		self.slug = slugify(self.name)
@@ -19,15 +20,19 @@ class Category(models.Model):
 
 class Page(models.Model):
 	category = models.ForeignKey(Category)
-	title = models.CharField(max_length=128)
-	url = models.URLField()
+	title = models.CharField(max_length=128, unique=True)
+	url = models.SlugField(max_length=100 , unique=True)
 	body= models.TextField()
 	views= models.IntegerField(default=0)
-	when = models.DateTimeField('date created', auto_now_add=True)
+	when = models.DateTimeField('date created', auto_now_add=True, db_index=True)
 
 	#equals to __str__
 	def __unicode__(self):
 		return self.title
+
+	def save(self, *args, **kwargs):
+		self.url = slugify(self.name)
+		super(Page,self).save(*args,**kwargs)
 
 class UserProfile(models.Model):
 	"""
