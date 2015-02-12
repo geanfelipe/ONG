@@ -66,6 +66,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default']['ENGINE']='django_postgrespool'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -79,13 +80,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-#heroku
+###############################################-HEROKU-######################################################
 DATABASES['default'] =  dj_database_url.config()
 
-#heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 
 ALLOWED_HOSTS = ['*']
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+###############################################-HEROKU-######################################################
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
