@@ -27,7 +27,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -95,7 +95,6 @@ USE_TZ = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 
-ALLOWED_HOSTS = ['*']
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/

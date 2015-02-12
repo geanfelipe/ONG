@@ -6,8 +6,6 @@ import datetime
 
 class Category(models.Model):
 	name = models.CharField(max_length=128, unique=True)
-	views = models.IntegerField(default=0)
-	likes = models.IntegerField(default=0)
 	slug = models.SlugField(unique=True)
 	
 	def save(self, *args, **kwargs):
@@ -23,6 +21,7 @@ class Page(models.Model):
 	category = models.ForeignKey(Category)
 	title = models.CharField(max_length=128)
 	url = models.URLField()
+	body= models.TextField()
 	views= models.IntegerField(default=0)
 	when = models.DateTimeField('date created', auto_now_add=True)
 
@@ -49,4 +48,5 @@ class UserProfile(models.Model):
 class Denuncias(models.Model):
 	email = models.EmailField()
 	title = models.CharField(max_length=128)
-	text = models.CharField(max_length=1000)
+	text = models.TextField()
+	Category = models.CharField(max_length=128)
