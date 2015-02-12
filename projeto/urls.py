@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', blog.views.index, name="index"),
     
+    
     #url(r'^$', include(admin.blog.urls)),
 )
 
