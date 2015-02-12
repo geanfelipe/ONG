@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
@@ -46,6 +47,6 @@ class UserProfile(models.Model):
 		return self.name
 
 class Denuncias(models.Model):
-	email = models.EmailFields(max_length=40)
+	email = models.EmailField()
 	title = models.CharField(max_length=128)
 	text = models.CharField(max_length=1000)
