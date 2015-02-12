@@ -42,6 +42,7 @@ class PageForms(forms.ModelForm):
         #n Django 1.7+ it is now required to specify the fields that are included, via fields, or specify the fields that
         #are to be excluded, via exclude.
         #----
+
 class UserForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput())
 
@@ -55,6 +56,8 @@ class UserProfileForm(forms.ModelForm)	:
 		fields=('website','picture')
 
 class DenunciaForm(forms.ModelForm):
-	text = forms.CharField(widget = )
+	text = forms.CharField(widget = forms.Textarea)
+
 	class Meta:
 		model = Denuncias
+		fields= ('email','title','text')
