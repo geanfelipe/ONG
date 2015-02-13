@@ -25,19 +25,6 @@ class PageForms(forms.ModelForm):
 	class Meta:
 		model = Page
 	    exclude = ('category',)
-        #or specify the fields to include (i.e. not include the category field)
-        #fields = ('title', 'url', 'views')
-	
-	def clean(self):
-		cleaned_data = self.cleaned_data
-		url = cleaned_data.get('url')
-	    	# If url is not empty and doesn't start with 'http://', prepend 'http://'.
-    		if url and not url.startswith('http://'):
-       			url = 'http://' + url
-	      		cleaned_data['url'] = url
-      		return cleaned_data
-
-    
         #----
         #n Django 1.7+ it is now required to specify the fields that are included, via fields, or specify the fields that
         #are to be excluded, via exclude.
@@ -56,8 +43,7 @@ class UserProfileForm(forms.ModelForm)	:
 		fields=('website','picture')
 
 class DenunciaForm(forms.ModelForm):
-	text = forms.CharField(widget = forms.Textarea)
 
 	class Meta:
 		model = Denuncias
-		fields= ('email','title','text')
+		fields= ('email','title','text','Category')
