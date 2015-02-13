@@ -5,5 +5,5 @@ from django.http import HttpResponse
 
 def index(request):
 
-	return render(request,'ong/index.html',{})
+	return HttpResponse("<br> <h1>WELCOME TO BLABLA ONG </h1></br>")
 
