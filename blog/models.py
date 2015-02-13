@@ -55,3 +55,6 @@ class Denuncias(models.Model):
 	title = models.CharField(max_length=128)
 	text = models.TextField()
 	Category = models.CharField(max_length=128)
+
+	def __unicode__(self):
+		return self.title

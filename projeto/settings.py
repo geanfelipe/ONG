@@ -23,7 +23,7 @@ import dj_database_url
 SECRET_KEY = 'v#l*!&ug770f7+5oz(2i92p3)+*#i1i!_yun50%5k21flxk&sk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -99,7 +99,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 ###############################################-HEROKU-######################################################
 
