@@ -60,6 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'projeto.urls'
@@ -116,7 +117,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 
 STATIC_URL = '/static/'
 STATIC_PATH = os.path.join(BASE_DIR,'static')
-STATIC_DIRS = (
+STATICFILES_DIRS = (
     STATIC_PATH,
 )
 
@@ -126,4 +127,17 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
+"""
+#SERVER
+if DEBUG:
 
+    from fnmatch import fnmatch
+    class glob_list(list):
+        def __contains__(self, key):
+            for elt in self:
+                if fnmatch(key, elt): return True
+            return False
+
+    INTERNAL_IPS = glob_list(['127.0.0.1', '192.168.*.*'])
+
+    """

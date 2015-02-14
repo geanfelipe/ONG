@@ -1,5 +1,5 @@
-{% load staticfiles %}
 <!DOCTYPE html>
+{% load staticfiles %}
 
 <html class="no-js" lang="en">
 <head>
@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width"/>
 <title>ONG Retweet</title>
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,7 +22,7 @@
 <div id="panel">
 	<div class="row">
 		<div class="twelve columns">
-			<img src="images/info.png" class="pics" alt="info">
+			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
 			<div class="infotext">
 				(-------- frase de impacto---------)
 			</div>
@@ -118,7 +118,7 @@
 						Posted on: 6 feb 2015<span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
 					</p>
 					<p>
-						<img src="images/temp/nivo3.jpg" alt="" class="thumb">Contrariamente, um programa sustentável de água pode reduzir os custos operacionais. Conheça aqui 10 maneiras através das quais a sua empresa pode beneficiar da poupança de água.
+						<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb">Contrariamente, um programa sustentável de água pode reduzir os custos operacionais. Conheça aqui 10 maneiras através das quais a sua empresa pode beneficiar da poupança de água.
 					</p>
 					<p>
 						<a href="artigo.html" class="small continue">Continue reading</a>
@@ -132,7 +132,7 @@
 						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
 					</p>
 					<p>
-						<img src="images/temp/folio3.jpg" alt="" class="thumb"> Também conhecidas como casas ecológicas, as casas sustentáveis são aquelas projetadas e construídas de maneira a respeitar o meio ambiente, seguindo os princípios da sustentabilidade ambiental e garantindo...
+						<img src="{% static "ong/images/temp/folio3.jpg" %}" alt="" class="thumb"> Também conhecidas como casas ecológicas, as casas sustentáveis são aquelas projetadas e construídas de maneira a respeitar o meio ambiente, seguindo os princípios da sustentabilidade ambiental e garantindo...
 					</p>
 					<p>
 						<a href="#" class="small continue">Continue reading</a>
@@ -146,7 +146,7 @@
 						Posted on: 2 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
 					</p>
 					<p>
-						<img src="images/temp/folio4.jpg" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
+						<img src="{% static "ong/images/temp/folio4.jpg" %}" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
 					</p>
 					<p>
 						<a href="#" class="small continue">Continue reading</a>
@@ -160,7 +160,7 @@
 						Posted on: 3 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
 					</p>
 					<p>
-						<img src="images/temp/folio6.jpg" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
+						<img src="{% static "ong/images/temp/folio6.jpg" %}" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
 					</p>
 					<p>
 						<a href="#" class="small continue">Continue reading</a>
@@ -174,7 +174,7 @@
 						Posted on: 2 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
 					</p>
 					<p>
-						<img src="images/temp/folio3.jpg" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
+						<img src="{% static "ong/images/temp/folio3.jpg" %}" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
 					</p>
 					<p>
 						<a href="#" class="small continue">Continue reading</a>
@@ -232,19 +232,19 @@
 			<br/>
 			<h6 class="sidebartitle">QUEM SOMOS</h6>
 			<div class="avatar">
-				<img src="images/temp/dd.jpg" alt="">
+				<img src="{% static "ong/images/temp/dd.jpg" %}" alt="">
 			</div>
 			<p>
 				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
 			</p>
 			<div class="avatar">
-				<img src="images/temp/author2.png" alt="">
+				<img src="{% static "ong/images/temp/author2.png" %}" alt="">
 			</div>
 			<p>
 				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
 			</p>
 			<div class="avatar">
-				<img src="images/temp/author3.png" alt="">
+				<img src="{% static "images/temp/author3.png" %}" alt="">
 			</div>
 			<p>
 				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
@@ -268,7 +268,7 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="http://www.facebook.com">
-			<img src="images/socialpack/facebooka.png" /></a>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}" /></a>
 		</div>
 	</div>
 	<div class="four columns">
@@ -298,16 +298,16 @@
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>
