@@ -11,7 +11,9 @@ Para instalar o pip, faça o download do [get-pip.py](https://bootstrap.pypa.io/
 
 
 
-**3. Rode o comando python get-pip.py**
+**3. Rode o comando **
+
+python get-pip.py
 
 
 
@@ -19,4 +21,18 @@ Para instalar o pip, faça o download do [get-pip.py](https://bootstrap.pypa.io/
 
 
 
-5. Execute 
+**5. Entre no diretório ONG**
+
+execute pip install -r requirements.txt 
+
+
+
+**6. Sincronize o banco**
+
+python manage.py migrate
+
+
+
+**7. Para executar o projeto, execute**
+
+python manage.py runserver
