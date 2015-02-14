@@ -1,7 +1,7 @@
 # ONG
 ## Para rodar este projeto na sua máquina:
 
-**1.install python 2.7**
+**1. Instale o python 2.7**
 
 
 **2. Em seguida instale o pip**
