@@ -11,7 +11,7 @@ Para instalar o pip, faça o download do [get-pip.py](https://bootstrap.pypa.io/
 
 
 
-**3. Rode o comando **
+**3. Rode o comando**
 
 python get-pip.py
 
