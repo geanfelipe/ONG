@@ -36,3 +36,7 @@ python manage.py migrate
 **7. Para executar o projeto, execute**
 
 python manage.py runserver
+
+
+
+
