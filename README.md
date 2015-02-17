@@ -40,3 +40,4 @@ python manage.py runserver
 
 
 
+![Alt text](static/running.png?raw=true "")
