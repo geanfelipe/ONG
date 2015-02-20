@@ -84,7 +84,8 @@ DATABASES = {
 
 #HEROKU
 
-DATABASES['default'] =  dj_database_url.config()
+#DATABASES['default'] =  dj_database_url.config()
+#DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -117,27 +118,16 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 
 STATIC_URL = '/static/'
 STATIC_PATH = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
 
-LOGIN_URL = '/login/'
+
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-"""
-#SERVER
-if DEBUG:
-
-    from fnmatch import fnmatch
-    class glob_list(list):
-        def __contains__(self, key):
-            for elt in self:
-                if fnmatch(key, elt): return True
-            return False
-
-    INTERNAL_IPS = glob_list(['127.0.0.1', '192.168.*.*'])
-
-    """
+#simplified static file serving
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

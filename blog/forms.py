@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User
 from django import forms
-from rango.models import Category,Page,UserProfile,Denuncias
+from blog.models import Category,Page,UserProfile,Denuncias
 
 class CategoryForm(forms.ModelForm):
 	name = forms.CharField(max_length=128,help_text="Please enter the Category name")
@@ -19,12 +19,12 @@ class CategoryForm(forms.ModelForm):
 
 class PageForms(forms.ModelForm):
 	title = forms.CharField(max_length=128, help_text="Please enter the title of the page.")
-	url = forms.URLField(max_length=200, help_text="Please enter the URL of the page.")
+	url = forms.URLField(max_length=200)
 	views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
 	class Meta:
 		model = Page
-	    exclude = ('category',)
+		exclude = ('url',)
         #----
         #n Django 1.7+ it is now required to specify the fields that are included, via fields, or specify the fields that
         #are to be excluded, via exclude.

@@ -26,13 +26,13 @@ class Page(models.Model):
 	views= models.IntegerField(default=0)
 	when = models.DateTimeField('date created', auto_now_add=True, db_index=True)
 
-	#equals to __str__
-	def __unicode__(self):
-		return self.title
-
 	def save(self, *args, **kwargs):
 		self.url = slugify(self.name)
 		super(Page,self).save(*args,**kwargs)
+
+	#equals to __str__
+	def __unicode__(self):
+		return self.title
 
 class UserProfile(models.Model):
 	"""
