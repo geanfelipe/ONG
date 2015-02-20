@@ -24,7 +24,7 @@ class PageForms(forms.ModelForm):
 
 	class Meta:
 		model = Page
-		exclude = ('url',)
+		fields = ('category','title','body',)
         #----
         #n Django 1.7+ it is now required to specify the fields that are included, via fields, or specify the fields that
         #are to be excluded, via exclude.
