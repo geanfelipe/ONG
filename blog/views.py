@@ -31,7 +31,7 @@ def add_category(self):
 def add_page(request,category_name_slug):
 	try:
 		cat = Category.objects.get(slug=category_name_slug)
-	except Category;DeosNotExist:
+	except Category.DeosNotExist:
 		cat = None
 
 	if request.method=='POST':
