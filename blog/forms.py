@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User
 from django import forms
-from blog.models import Category,Page,UserProfile,Denuncias
+from blog.models import Category,Page,Cadastro,Denuncias
 
 class CategoryForm(forms.ModelForm):
 	name = forms.CharField(max_length=128,help_text="Please enter the Category name")
@@ -30,17 +30,22 @@ class PageForms(forms.ModelForm):
         #are to be excluded, via exclude.
         #----
 
-class UserForm(forms.ModelForm):
-	#password = forms.CharField(widget=forms.PasswordInput())
+
+class CadastroForm(forms.ModelForm):
+	
 
 	class Meta:
-		model = User
-		fields= ('username','email','password','email')
+		model = Cadastro
+		fields = ('name','website','picture','email')
 
-class UserProfileForm(forms.ModelForm)	:
-	class Meta:
-		model = UserProfile
-		fields=('website','picture',)
+	def clean(self):
+		cleaned_data = self.cleaned_data
+		website = cleaned_data.get('website')
+		# If url is not empty and doesn't start with 'http://', prepend 'http://'.
+	    	if website and not website.startswith('http://'):
+       			website = 'http://' + website
+		    	cleaned_data['website'] = website
+      		return cleaned_data
 
 class DenunciaForm(forms.ModelForm):
 

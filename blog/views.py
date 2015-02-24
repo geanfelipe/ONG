@@ -3,8 +3,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template.response import TemplateResponse
-from blog.forms import CategoryForm,PageForms,UserForm,UserProfileForm,DenunciaForm
-from blog.models import Category,Page,UserProfile,Denuncias
+from blog.forms import CategoryForm,PageForms,CadastroForm,UserProfileForm,DenunciaForm
+from blog.models import Category,Page,Cadastro,Denuncias
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -14,7 +14,7 @@ def index(request):
 	return render(request,"ong/index.html",{})
 
 
-@login_required
+#@login_required
 def add_category(self):
 	if request.method == 'POST':
 		form = CategoryForm(request.POST)
@@ -27,7 +27,7 @@ def add_category(self):
 
 	return render(request, 'ong/newCategory.html',{})
 
-@login_required
+#@login_required
 def add_page(request,category_name_slug):
 	try:
 		cat = Category.objects.get(slug=category_name_slug)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Category,Page,UserProfile,Denuncias
+from blog.models import Category,Page,Cadastro,Denuncias
 
 class categoryAdmin(admin.ModelAdmin):
 	#prepopulated_fields = {'slug':('name',)}
@@ -16,5 +16,5 @@ class DenunciasAdmin(admin.ModelAdmin):
 
 admin.site.register (Page, pageAdmin)
 admin.site.register(Category,categoryAdmin)
-admin.site.register(UserProfile)
+admin.site.register(Cadastro)
 admin.site.register(Denuncias,DenunciasAdmin)

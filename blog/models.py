@@ -34,7 +34,7 @@ class Page(models.Model):
 	def __unicode__(self):
 		return self.title
 
-class UserProfile(models.Model):
+class Cadastro(models.Model):
 	"""
 	--> dedicated to ONG
 	"""
@@ -42,7 +42,7 @@ class UserProfile(models.Model):
 	name = models.CharField(max_length=128, unique=True)
 	website = models.URLField(blank=True)
 	picture = models.ImageField(upload_to='profile_images/%Y/%m/%d',blank=True)
-	email = models.EmailField()
+	email = models.EmailField(unique=True)
 
 
 	def __unicode__(self):
