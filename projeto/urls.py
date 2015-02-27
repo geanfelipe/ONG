@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', blog.views.index, name="index"),
+    url(r'^novacategoria/$', blog.views.add_category, name='newCat'),
     
     
     #url(r'^$', include(admin.blog.urls)),

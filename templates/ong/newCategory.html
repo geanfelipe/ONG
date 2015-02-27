@@ -113,54 +113,27 @@
 		<div class="eight columns noleftmargin">
 			<div class="six columns">
 				<div class="boxblog">
-					<h5>Reduzir consumo de água</h5>
+					<h5>Nova Category</h5>
 					<p class="small date">
-						<!--DJANGO AQUI	-->
+						<form id="adicionar_categoria" method="post" action="/">
+						{% csrf_token %}
+						{% for hidden in form.hidden_fields %}
+							{{ hidden }}
+						{% endfor %}
+						
+						{% for fields in form.visible_fields %}
+							{{ fields.errors }}
+							{{ fields.help_text }}
+							{{ fields }}
+						{% endfor %}
+
+
+						<input type="submit" name="submit" value="Criar nova Categoria"/>
+					</form>
 					</p>
 					
 				</div>
 			</div>
-			<div class="six columns">
-				<div class="boxblog">
-					<h5>Hotel Biscuit</h5>
-					<p class="small date">
-						Posted on: 3 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
-					</p>
-					<p>
-						<img src="{% static "ong/images/temp/folio6.jpg" %}" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
-					</p>
-				</div>
-			</div>
-			<div class="six columns">
-				<div class="boxblog">
-					<h5>Private Theater</h5>
-					<p class="small date">
-						Posted on: 2 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
-					</p>
-					<p>
-						<img src="{% static "ong/images/temp/folio3.jpg" %}" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
-					</p>
-				</div>
-			</div>
-			<div class="six columns">
-				<div class="boxblog">
-					<h5>Transatlantic</h5>
-					<p class="small date">
-						Posted on: 3 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
-					</p>
-					<p>
-						<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
-					</p>
-				</div>
 			</div>
 			<ul class="pagination">
 				<li class="arrow unavailable"><a href="">&laquo;</a></li>
@@ -218,7 +191,7 @@
 			</p>
 		</div>
 	</div>
-</div>
+
 <div class="hr">
 </div>
 <!-- LITTLE FOOTER

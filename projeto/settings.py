@@ -63,6 +63,11 @@ MIDDLEWARE_CLASSES = (
 
 )
 
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher' ,
+)
+
 ROOT_URLCONF = 'projeto.urls'
 
 WSGI_APPLICATION = 'projeto.wsgi.application'
