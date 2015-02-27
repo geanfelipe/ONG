@@ -46,7 +46,7 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Início</a>						
+					<a href="">Início</a>						
 					</li>
 					
 					<li>
@@ -75,6 +75,11 @@
 					<li>
 					<a href="contato.html">Contato</a>
 					</li>
+					{% if user.is_authenticated %}
+					<li>
+					<a href="/Administracao/">Administração</a>
+					</li>
+					{% endif %}
 					
 				</ul>
 				</nav>

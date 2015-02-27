@@ -16,9 +16,10 @@ def index(request):
 	return render(request,"ong/index.html",{})
 
 
-
+@login_required
 def add_category(request):
-	
+
+
 	if request.method == 'POST':
 		form = CategoryForm(request.POST)
 
@@ -36,26 +37,12 @@ def add_category(request):
 
 
 def add_page(request,category_name_slug):
-	try:
-		cat = Category.objects.get(slug=category_name_slug)
-	except Category.DeosNotExist:
-		cat = None
 
-	if request.method=='POST':
-		form = PageForms(request.POST)
-		if form.is_valid():
-			if cat:
-				page = form.save(commit=False)
-				page.category= cat
-				page.views = 0
-				page.save()
-				return category(request,category_name_slug)
-		else:
-			print form.errors
-	else:
-		form = PageForms()
 
-	context_dict = {'form':form, 'category':cat, 'link':cat.slug}
+	return render(request,'ong/newPage.html',{})
 
-	return render(request,'ong/newPage.html',context_dict)
+def administracao(request):
 
+
+
+	return render (request, 'ong/administracao.html',{})

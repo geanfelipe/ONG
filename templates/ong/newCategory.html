@@ -115,12 +115,13 @@
 				<div class="boxblog">
 					<h5>Nova Category</h5>
 					<p class="small date">
-						<form id="adicionar_categoria" method="post" action="/">
+						<form id="adicionar_categoria" method="post" action="">
 						{% csrf_token %}
 						{% for hidden in form.hidden_fields %}
 							{{ hidden }}
 						{% endfor %}
 						
+
 						{% for fields in form.visible_fields %}
 							{{ fields.errors }}
 							{{ fields.help_text }}
@@ -135,62 +136,10 @@
 				</div>
 			</div>
 			</div>
-			<ul class="pagination">
-				<li class="arrow unavailable"><a href="">&laquo;</a></li>
-				<li class="current"><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li class="unavailable"><a href="">&hellip;</a></li>
-				<li><a href="">12</a></li>
-				<li><a href="">13</a></li>
-				<li class="arrow"><a href="">&raquo;</a></li>
-			</ul>
-		</div>
-		<!-- SIDEBAR -->
-		<div class="four columns">
-			<h6 class="sidebartitle">SOBRE </h6>
-			<p>
-				7 Oct 2013
-			</p>
-			<p>
-				Many pieces were proposed, but none seemed suitable, because each one wished to play a good and suitable part ...
-			</p>
-			<p>
-				6 Sept 2013
-			</p>
-			<p>
-				It was ready for production, when through accident we were disappointed about securing the private theatre on ...
-			</p>
-			<p>
-				4 Aug 2013
-			</p>
-			<p>
-				The over-kind praise which it won encouraged me to have the play printed. I decided, as I could see no other prospects...
-			</p>
-			<br class="clear"/>
-			<br/>
-			<h6 class="sidebartitle">QUEM SOMOS</h6>
-			<div class="avatar">
-				<img src="{% static "ong/images/temp/dd.jpg" %}" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p> 
-			<div class="avatar">
-				<img src="{% static "ong/images/temp/author2.png" %}" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p>
-			<div class="avatar">
-				<img src="{% static "ong/images/temp/author3.png" %}" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p>
+			
 		</div>
 	</div>
+	
 
 <div class="hr">
 </div>
