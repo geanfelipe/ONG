@@ -8,6 +8,7 @@ from blog.models import Category,Page,Cadastro,Denuncias
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login , logout
 from datetime import datetime
+import os
 
 def index(request):
 	context_dict = {}	
@@ -27,7 +28,7 @@ def add_category(request):
 			return HttpResponse("<h1>Ok</h1>")
 		else:
 			print form.errors
-			#return HttpResponse(form.errors)
+			print form.error_class
 	else:
 		form = CategoryForm()
 
@@ -35,17 +36,32 @@ def add_category(request):
 
 
 def add_page(request):
-
+	"""Modefields-->category,title,body,url,views,when"""
+	"""Formfields-->category,title,body"""
 	if request.method=='POST':
 		formPage = PageForms(request.POST)
 
 		if formPage.is_valid():
 			formPage.save(commit=True)
 
-	return render(request,'ong/newPage.html',{})
+		else:
+			print formPage.errors
+	else:
+		formPage = PageForms()
+	
+	return render(request,'ong/newPage.html',{'form':formPage})
+
+
+def pagina(request, slug):
+	try:
+		categoria = Category.objects.get(url=slug)
+	except Category.DoesNotExist:
+		categoria = None
+
+	if 
+
 
 def administracao(request):
 
-
-
 	return render (request, 'ong/administracao.html',{})
+

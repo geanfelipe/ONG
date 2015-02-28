@@ -24,10 +24,10 @@ class Page(models.Model):
 	url = models.SlugField(max_length=100 , unique=True)
 	body= models.TextField()
 	views= models.IntegerField(default=0)
-	when = models.DateTimeField('date created', auto_now_add=True, db_index=True)
+	when = models.DateTimeField('data de criação', auto_now_add=True, db_index=True)
 
 	def save(self, *args, **kwargs):
-		self.url = slugify(self.name)
+		self.url = slugify(self.title)
 		super(Page,self).save(*args,**kwargs)
 
 	#equals to __str__

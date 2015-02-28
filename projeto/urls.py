@@ -6,13 +6,14 @@ import blog.views
 from django.conf.urls.static import static
 
 urlpatterns = patterns('',
-    # Examples:
+    # Examples: 
     # url(r'^$', 'projeto.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', blog.views.index, name="index"),
-    url(r'^novacategoria/$', blog.views.add_category, name='newCat'),
+    url(r'^novacategoria/$', blog.views.add_category, name='nova_categoria'),
+    url(r'^novapagina/$', blog.views.add_page, name='nova_pagina'),
     url(r'^Administracao/$', blog.views.administracao, name='administracao'),
     
     

@@ -123,14 +123,12 @@
 						
 
 						{% for fields in form.visible_fields %}
-							{{ fields.errors }}
+							{{ fields.errors}}
 							{{ fields.help_text }}
 							{{ fields }}
 						{% endfor %}
 
-						{% if form.erro %}
-							<h3>{{ erro }}</h3>
-						{% endif %}
+						
 
 						<input type="submit" name="submit" value="Criar nova Categoria"/>
 					</form>
