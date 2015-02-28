@@ -16,9 +16,7 @@ def index(request):
 	return render(request,"ong/index.html",{})
 
 
-@login_required
 def add_category(request):
-
 
 	if request.method == 'POST':
 		form = CategoryForm(request.POST)
@@ -29,15 +27,20 @@ def add_category(request):
 			return HttpResponse("<h1>Ok</h1>")
 		else:
 			print form.errors
-			return HttpResponse("erro")
+			#return HttpResponse(form.errors)
 	else:
 		form = CategoryForm()
 
 	return render(request,'ong/newCategory.html',{'form':form})
 
 
-def add_page(request,category_name_slug):
+def add_page(request):
 
+	if request.method=='POST':
+		formPage = PageForms(request.POST)
+
+		if formPage.is_valid():
+			formPage.save(commit=True)
 
 	return render(request,'ong/newPage.html',{})
 
