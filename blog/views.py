@@ -52,6 +52,21 @@ def add_page(request):
 	return render(request,'ong/newPage.html',{'form':formPage})
 
 
+def listarPaginas(request, category_slug):
+	context_dict = {}
+
+	try:
+		category = Category.objects.get(slug=category_slug)
+		context_dict['category_name'] = category.name
+
+		pages = Page.objects.filter(category=category)
+		context_dict['pages'] = pages
+	except :
+			print 'Erro'
+
+
+	return render(request, 'ong/category.html', context_dict)
+
 def administracao(request):
 
 	return render (request, 'ong/administracao.html',{})
