@@ -52,15 +52,6 @@ def add_page(request):
 	return render(request,'ong/newPage.html',{'form':formPage})
 
 
-def pagina(request, slug):
-	try:
-		categoria = Category.objects.get(url=slug)
-	except Category.DoesNotExist:
-		categoria = None
-
-	if 
-
-
 def administracao(request):
 
 	return render (request, 'ong/administracao.html',{})
