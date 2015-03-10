@@ -1,14 +1,16 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+
 <html class="no-js" lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Noticias</title>
+<title>{{page.title}}</title>
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
 </head>
 <body>
 
@@ -17,7 +19,7 @@
 <div id="panel">
 	<div class="row">
 		<div class="twelve columns">
-			<img src="images/info.png" class="pics" alt="info">
+			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
 			<div class="infotext">
 				(-------- frase de impacto---------)
 			</div>
@@ -33,7 +35,7 @@
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">
-				<a href="index.html"><h4>ONG Retweet</h4></a>
+				<a href="/"><h4>ONG Retweet</h4></a>
 			</div>
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -110,7 +112,7 @@
 				<h4>Nome do Artigo</h4>
 			</div>
 			<p>
-				<img src="images/temp/post.jpg" class="blogimage grayscale" alt="">
+				<img src="{% static "ong/images/temp/post.jpg" %}" class="blogimage grayscale" alt="">
 			</p>
 			<p>
 				 Mrs. Delorane had died of decline: people would say to one another, in confidence, they hoped Ellin might escape it. The largest and <b>best farm</b> in the neighbourhood of Timberdale, larger than even that of the Ashtons, was called the Dower Farm.
@@ -132,11 +134,11 @@
 		</div>			
 			<hr>
 			<div class="gravatar">
-				<img src="images/gravatar.png" alt="">
+				<img src="{% static "ong/images/gravatar.png" %}" alt="">
 			</div>
 			<h5>Sam
 			<span class="commentdate">
-				- October 26, 2013 at 9:39 am
+				- {{ page.when }}
 			</span>
 			</h5>
 			
@@ -253,16 +255,18 @@
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+
 </body>
 </html>

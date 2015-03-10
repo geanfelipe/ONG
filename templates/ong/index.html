@@ -117,25 +117,30 @@
 	    <!-- MAIN CONTENT -->
 		<div class="eight columns noleftmargin">
 
-			{% for page in pages %}
+			{% if pages %}
+				{% for page in pages %}
 
-			<div class="six columns">
-				<div class="boxblog">
-					<h5>{{page.title}}</h5>
-					<p class="small date">
-						Postado em : {{page.when}}<span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
-					</p>
-					<p>
-						<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb">{{page.description}}
-					</p>
-					<p>
+				<div class="six columns">
+					<div class="boxblog">
+						<h5>{{page.title}}</h5>
+						<p class="small date">
+							Postado em : {{page.when}}<span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+						</p>
+						<p>
+							<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb">{{page.description}}
+						</p>
+						<p>
 
-						<a href="/{{ page.slugCategory }}/{{ page.url }}" class="small continue">Continue reading</a>
-					</p>
+							<a href="/{{ page.slugCategory }}/{{ page.url }}" class="small continue">Continue reading</a>
+						</p>
+					</div>
 				</div>
-			</div>
 
-			{% endfor %}
+				{% endfor %}
+
+			{% else %}
+				<strong>Ainda não ná nenhum artigo no blog</strong>
+			{% endif %}
 			<!--
 			<div class="six columns">
 				<div class="boxblog">

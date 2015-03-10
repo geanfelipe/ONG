@@ -77,11 +77,10 @@ def listarPaginas(request, category_slug):
 
 
 def page(request,category_slug, page_url):
-	context_dict = {}
+	context_dict= {}
 
-	page = Page.objects.filter(url=page_url)[0]
-
-	context_dict['pages'] = page
+	context_dict['page']= Page.objects.filter(url=page_url)[0]
+	
 
 
 	return render(request,'ong/artigo.html',context_dict)
