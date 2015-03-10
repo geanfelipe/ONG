@@ -26,6 +26,7 @@ class Page(models.Model):
 	views= models.IntegerField(default=0)
 	when = models.DateTimeField('data de criação', auto_now_add=True, db_index=True)
 	slugCategory = models.SlugField(unique=True,db_index=True)
+	body = models.TextField()
 
 	def save(self, *args, **kwargs):
 		self.url = slugify(self.title)

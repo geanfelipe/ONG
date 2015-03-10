@@ -15,8 +15,6 @@ def index(request):
 	context_dict = {}
 	
 	context_dict['pages'] = Page.objects.all()[:6]
-	
-
 
 	return render(request,"ong/index.html",context_dict)
 
@@ -89,3 +87,7 @@ def administracao(request):
 
 	return render (request, 'ong/administracao.html',{})
 
+
+def denuncie(request):
+
+	return render(request, 'ong/denuncie.html',{})
