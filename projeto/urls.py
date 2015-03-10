@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^novacategoria/$', blog.views.add_category, name='nova_categoria'),
     url(r'^novapagina/$', blog.views.add_page, name='nova_pagina'),
     url(r'^Administracao/$', blog.views.administracao, name='administracao'),
-    url(r'^(?P<category_name_slug>[\w\-]+)/$', blog.views.listarPaginas, name='listarPaginas'),
+    url(r'^(?P<category_slug>[\w\-]+)/$', blog.views.listarPaginas, name='listarPaginas'),
 
     
     

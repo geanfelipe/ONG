@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>ONG Retweet | {{ category_name }}</title>
+<title>{{ category_name }}</title>
 <!-- Included CSS Files-->
 <link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
 <link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
@@ -112,10 +112,10 @@
 	    <!-- MAIN CONTENT -->
 		<div class="eight columns noleftmargin">
 			<div class="six columns">
-				<div class="boxblog">
-					<h5>Nova Category</h5>
+			
+					<h5> Colunas sobre {{ category_name }}</h5>
 					<p class="small date">
-						<form id="adicionar_categoria" method="post" action="">
+						
 						
 						{% if category %}
 
@@ -132,11 +132,10 @@
 
 						{% endif %}
 
-						<input type="submit" name="submit" value="Criar nova Categoria"/>
-					</form>
+						
 					</p>
 					
-				</div>
+		
 			</div>
 			</div>
 			
