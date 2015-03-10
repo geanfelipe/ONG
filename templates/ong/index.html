@@ -117,7 +117,6 @@
 	    <!-- MAIN CONTENT -->
 		<div class="eight columns noleftmargin">
 
-
 			{% for page in pages %}
 
 			<div class="six columns">
@@ -131,12 +130,12 @@
 					</p>
 					<p>
 
-						<a href="/{{ page.category }}/{{ page.url }}" class="small continue">Continue reading</a>
+						<a href="/{{ page.slugCategory }}/{{ page.url }}" class="small continue">Continue reading</a>
 					</p>
 				</div>
 			</div>
 
-		
+			{% endfor %}
 			<!--
 			<div class="six columns">
 				<div class="boxblog">

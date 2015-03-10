@@ -13,14 +13,10 @@ import os
 
 def index(request):
 	context_dict = {}
-
+	
 	context_dict['pages'] = Page.objects.all()[:6]
+	
 
-	for i in Category.objects.all()[:6]:
-		context_dict[i.name] = i.slug
-
-
-	print context_dict
 
 	return render(request,"ong/index.html",context_dict)
 

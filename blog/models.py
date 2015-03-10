@@ -25,9 +25,11 @@ class Page(models.Model):
 	description= models.TextField(max_length=240)
 	views= models.IntegerField(default=0)
 	when = models.DateTimeField('data de criação', auto_now_add=True, db_index=True)
+	slugCategory = models.SlugField(unique=True,db_index=True)
 
 	def save(self, *args, **kwargs):
 		self.url = slugify(self.title)
+		self.slugCategory = slugify(self.category)
 		super(Page,self).save(*args,**kwargs)
 
 	#equals to __str__
