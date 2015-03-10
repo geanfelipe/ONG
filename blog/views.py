@@ -3,6 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, request, HttpResponseRedirect, HttpRequest
 from django.template.response import TemplateResponse
+from django.template.defaultfilters import slugify
 from blog.forms import CategoryForm,PageForms,CadastroForm,DenunciaForm
 from blog.models import Category,Page,Cadastro,Denuncias
 from django.contrib.auth.decorators import login_required
@@ -11,10 +12,17 @@ from datetime import datetime
 import os
 
 def index(request):
-	context_dict = {}	
+	context_dict = {}
+
+	context_dict['pages'] = Page.objects.all()[:6]
+
+	for i in Category.objects.all()[:6]:
+		context_dict[i.name] = i.slug
 
 
-	return render(request,"ong/index.html",{})
+	print context_dict
+
+	return render(request,"ong/index.html",context_dict)
 
 
 def add_category(request):
@@ -63,12 +71,24 @@ def listarPaginas(request, category_slug):
 		pages = Page.objects.filter(category=category)
 		context_dict['pages'] = pages
 
-		context_dict['category'] = category
+		context_dict['category'] = category_slug
 	except :
 			print 'Erro'
 
 
 	return render(request, 'ong/category.html', context_dict)
+
+
+
+def page(request,category_slug, page_url):
+	context_dict = {}
+
+	page = Page.objects.filter(url=page_url)[0]
+
+	context_dict['pages'] = page
+
+
+	return render(request,'ong/artigo.html',context_dict)
 
 def administracao(request):
 

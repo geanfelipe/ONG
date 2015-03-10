@@ -122,14 +122,16 @@
 							{% if pages %}
 								<ul>
 								{% for page in pages %}
-									<li> <a href="{{ pages.url }}"> {{ page.title }} </a></li>
+									<li> <a href="{{ pages.url }}"> {{ page.title }}</a></li>
 								{% endfor %}
 								</ul>
 							{% else %}
-								<strong>Nenhuma Categoria</strong>
-
+								<strong>Nenhuma Página Criada</strong>
 							{% endif %}
 
+						{% else %}
+								<strong>Nenhuma Categoria</strong>
+						
 						{% endif %}
 
 						

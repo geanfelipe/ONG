@@ -22,7 +22,7 @@ class Page(models.Model):
 	category = models.ForeignKey(Category)
 	title = models.CharField(max_length=128, unique=True)
 	url = models.SlugField(max_length=100 , unique=True)
-	body= models.TextField()
+	description= models.TextField(max_length=240)
 	views= models.IntegerField(default=0)
 	when = models.DateTimeField('data de criação', auto_now_add=True, db_index=True)
 

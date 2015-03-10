@@ -116,20 +116,28 @@
 	<div class="twelve columns noleftmargin">
 	    <!-- MAIN CONTENT -->
 		<div class="eight columns noleftmargin">
+
+
+			{% for page in pages %}
+
 			<div class="six columns">
 				<div class="boxblog">
-					<h5>Reduzir consumo de água</h5>
+					<h5>{{page.title}}</h5>
 					<p class="small date">
-						Posted on: 6 feb 2015<span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+						Postado em : {{page.when}}<span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
 					<p>
-						<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb">Contrariamente, um programa sustentável de água pode reduzir os custos operacionais. Conheça aqui 10 maneiras através das quais a sua empresa pode beneficiar da poupança de água.
+						<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb">{{page.description}}
 					</p>
 					<p>
-						<a href="artigo.html" class="small continue">Continue reading</a>
+
+						<a href="/{{ page.category }}/{{ page.url }}" class="small continue">Continue reading</a>
 					</p>
 				</div>
 			</div>
+
+		
+			<!--
 			<div class="six columns">
 				<div class="boxblog">
 					<h5>Casas sustentáveis</h5>
@@ -200,6 +208,7 @@
 					</p>
 				</div>
 			</div>
+		-->
 			<ul class="pagination">
 				<li class="arrow unavailable"><a href="">&laquo;</a></li>
 				<li class="current"><a href="">1</a></li>

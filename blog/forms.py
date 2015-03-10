@@ -18,7 +18,7 @@ class PageForms(forms.ModelForm):
 	
 	class Meta:
 		model = Page
-		fields = ('category','title','body',)
+		fields = ('category','title','description',)
        
 
 class CadastroForm(forms.ModelForm):
