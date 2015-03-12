@@ -108,14 +108,16 @@
 	<div class="twelve columns noleftmargin">
 	     <!-- MAIN CONTENT -->
 		<div class="eight columns">
-			<div class="sectiontitle">
-				<h4>{{page.title}}</h4>
-			</div>
-			<p>
-				<img src="{% static "ong/images/temp/post.jpg" %}" class="blogimage grayscale" alt="">
-			</p>
+			{% if page %}
+				<div class="sectiontitle">
+					<h4>{{page.title}}</h4>
+				</div>
+				<p>
+					<img src="{% static "ong/images/temp/post.jpg" %}" class="blogimage grayscale" alt="">
+				</p>
 
-			{{page.body}}
+				{{page.body}}
+
 
 			<!--
 			<p>
@@ -160,19 +162,19 @@
 		<div class="four columns">
 			<h6 class="sidebartitle">VEJA AGORA</h6>
 			<div class="avatar">
-				<img src="images/temp/author1.png" alt="">
+				<img src="{% static "ong/images/temp/author1.png" %}" alt="">
 			</div>
 			<p>
 				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
 			</p>
 			<div class="avatar">
-				<img src="images/temp/author2.png" alt="">
+				<img src="{% static "ong/images/temp/author2.png" %}" alt="">
 			</div>
 			<p>
 				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
 			</p>
 			<div class="avatar">
-				<img src="images/temp/author3.png" alt="">
+				<img src="{% static "ong/images/temp/author3.png" %}" alt="">
 			</div>
 			<p>
 				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
@@ -209,8 +211,13 @@
 			<p>
 				The over-kind praise which it won encouraged me to have the play printed. I decided, as I could see no other prospects...
 			</p> 
+		{% else %}
+				<h1>Página não existe</h1>
+		{% endif %}
 		</div>
+		
 	</div>
+<!--===CONTENT===-->
 </div>
 <div class="hr">
 </div>

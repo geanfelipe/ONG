@@ -3,9 +3,9 @@
 
 <html class="no-js" lang="en">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Denuncie</title>
+<title>ONG Retweet</title>
 <!-- Included CSS Files-->
 <link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
 <link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
@@ -59,7 +59,7 @@
 					<li> 
 					<a href="#">Campanhas</a>
 						<ul>
-						<li><a href="campanha1.html">Conheca mais</a></li>
+						<li><a href="campanha1.html">Conheça mais</a></li>
 						<li><a href="campanha2.html">Faça sua campanha</a></li>
 						</ul>
 					</li>
@@ -100,7 +100,7 @@
 </div>
 <!-- CONTENT 
 ================================================== -->
-
+{% csrf_token %}
 <div class="row">
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
@@ -128,7 +128,7 @@
 				</form>			
 		</div>
 	</div>
-												
+
 </div>
 <div class="hr">
 </div>

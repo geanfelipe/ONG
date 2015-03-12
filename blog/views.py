@@ -67,7 +67,8 @@ def listarPaginas(request, category_slug):
 
 		context_dict['category'] = category_slug
 	except :
-			print 'Erro'
+			print 'erro'
+			context_dict['erro'] = "Erro"
 
 
 	return render(request, 'ong/category.html', context_dict)
@@ -77,10 +78,11 @@ def listarPaginas(request, category_slug):
 def page(request,category_slug, page_url):
 	context_dict= {}
 
-	context_dict['page']= Page.objects.filter(url=page_url)[0]
-	
-
-
+	try:
+		context_dict['page']= Page.objects.filter(url=page_url)[0]
+	except:
+		context_dict['page']= Page.objects.filter(url=page_url)
+		
 	return render(request,'ong/artigo.html',context_dict)
 
 def administracao(request):
@@ -90,4 +92,4 @@ def administracao(request):
 
 def denuncie(request):
 
-	return render(request, 'ong/denuncie.html',{})
+	return render(request,'ong/denuncie.html',{'ola':'ola'})

@@ -112,13 +112,10 @@
 	    <!-- MAIN CONTENT -->
 		<div class="eight columns noleftmargin">
 			<div class="six columns">
-			
-					<h5> Colunas sobre {{ category_name }}</h5>
-					<p class="small date">
+					{% if category %}
+						<h5> Colunas sobre {{ category_name }}</h5>
+						<p class="small date">
 						
-						
-						{% if category %}
-
 							{% if pages %}
 								<ul>
 								{% for page in pages %}
@@ -129,8 +126,8 @@
 								<strong>Nenhuma Página Criada</strong>
 							{% endif %}
 
-						{% else %}
-								<strong>Nenhuma Categoria</strong>
+					{% else %}
+								<h1><strong>Página não encontrada</strong></h1>
 						
 						{% endif %}
 
