@@ -9,6 +9,7 @@ from blog.models import Category,Page,Cadastro,Denuncias
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login , logout
 from datetime import datetime
+import django.utils.encoding
 import os
 
 def index(request):
@@ -58,7 +59,6 @@ def listarPaginas(request, category_slug):
 	context_dict = {}
 
 	try:
-
 		category = Category.objects.get(slug=category_slug)
 		context_dict['category_name'] = category.name
 
@@ -73,8 +73,6 @@ def listarPaginas(request, category_slug):
 
 	return render(request, 'ong/category.html', context_dict)
 
-
-
 def page(request,category_slug, page_url):
 	context_dict= {}
 
@@ -82,14 +80,29 @@ def page(request,category_slug, page_url):
 		context_dict['page']= Page.objects.filter(url=page_url)[0]
 	except:
 		context_dict['page']= Page.objects.filter(url=page_url)
-		
+
 	return render(request,'ong/artigo.html',context_dict)
 
 def administracao(request):
 
 	return render (request, 'ong/administracao.html',{})
 
-
 def denuncie(request):
+	context_dict = {}
 
-	return render(request,'ong/denuncie.html',{'ola':'ola'})
+	if request.method == 'POST':
+		form = DenunciaForm (request.POST)
+
+		if form.is_valid():
+			form.save(commit=True)
+			
+		else:
+			print form.errors
+	else:
+		form = DenunciaForm()
+
+	return render(request,'ong/denuncie.html',{'formPage':form})
+
+def contato (request):
+	context_dict = {}
+	return render(request,'ong/contato.html', context_dict)

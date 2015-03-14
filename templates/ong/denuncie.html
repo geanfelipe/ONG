@@ -22,7 +22,7 @@
 <div id="panel">
 	<div class="row">
 		<div class="twelve columns">
-			<img src="{% static "ong/images/info.png" }" class="pics" alt="info">
+			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
 			<div class="infotext">
 				(-------- frase de impacto---------)
 			</div>
@@ -46,7 +46,7 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="/">Inicio</a>						
+					<a href="/">InÃ­cio</a>						
 					</li>
 					
 					<li>
@@ -59,8 +59,8 @@
 					<li> 
 					<a href="#">Campanhas</a>
 						<ul>
-						<li><a href="campanha1.html">Conheça mais</a></li>
-						<li><a href="campanha2.html">Faça sua campanha</a></li>
+						<li><a href="campanha1.html">ConheÃ§a mais</a></li>
+						<li><a href="campanha2.html">FaÃ§a sua campanha</a></li>
 						</ul>
 					</li>
 					
@@ -73,8 +73,13 @@
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
+					{% if user.is_authenticated %}
+					<li>
+					<a href="/Administracao/">AdministraÃ§Ã£o</a>
+					</li>
+					{% endif %}
 					
 				</ul>
 				</nav>
@@ -86,13 +91,20 @@
 ================================================== -->
 <div id="subheader">
 	<div class="row">
-		<div class="twelve columns">
-			<p class="left">
-				 FAÇA SUA DENÚNCIA JÁ
+		<div class="eight columns">
+			<p class="bread leftalign">
+				<!-- You are here: <a href="index.html"> Home</a> / <a href="blogpage2.html">Blog second style</a> -->
 			</p>
-			<p class="right">
-				Nos ajude a cuidar da nossa natureza!
-			</p>
+		</div>
+		<div class="four columns">
+			<div class="row collapse">
+				<div class="ten mobile-three columns">
+					<input type="text" class="nomargin" placeholder="Pesquisar...">
+				</div>
+				<div class="two mobile-one columns">
+					<a href="#" class="postfix button expand">Ir</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -100,7 +112,6 @@
 </div>
 <!-- CONTENT 
 ================================================== -->
-{% csrf_token %}
 <div class="row">
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
@@ -111,24 +122,28 @@
 				 Sua mensagem foi enviada! <a href="" class="close">x</a>
 				</div>
 			</div>			
-				<form method="post" action="contact.php" id="contactform">
+				
+				
+			<form method="post" action="." id="contactform">	
+				{% csrf_token %}
 				<div class="form">
 				    <div class="six columns noleftmargin">
-					<label>Nome</label>
-					<input type="text" name="name" class="smoothborder" placeholder="Seu nome *"/>
-					</div>
-					<div class="six columns">
-					<label>E-mail</label>
-					<input type="text" name="email" class="smoothborder" placeholder="Seu e-mail *"/>
-					</div>
-					<label>Mensagem</label>
-					<textarea name="comment" class="smoothborder ctextarea" rows="14" placeholder="Deixe sua mensagem para nós *"></textarea>
+				    	
+						{% for fieldsInvisivel in formPage.hidden_fields %}
+							{{ fieldsInvisivel }}
+						{% endfor %}
+
+						{% for fields in formPage.visible_fields %}
+							{{ fields.errors }}
+							{{ fields.label_tag }}
+							{{ fields }}
+						{% endfor %}
 					<input type="submit" id="submit" class="readmore" value="Enviar">
-				</div>
+					</div>
 				</form>			
 		</div>
 	</div>
-
+												
 </div>
 <div class="hr">
 </div>
@@ -176,8 +191,8 @@
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
 <script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
-<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
 <script src="{% static "ong/javascripts/app.js" %}"></script>
 <script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
 <script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
@@ -187,6 +202,5 @@
 <script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
 <script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
 <script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
-<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
 </body>
 </html>

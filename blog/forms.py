@@ -15,7 +15,9 @@ class CategoryForm(forms.ModelForm):
 class PageForms(forms.ModelForm):
 	"""fields-->category,title,body,url,views,when"""
 	title = forms.CharField(max_length=128, help_text="Título da Página")
-	
+	description = forms.CharField(widget = forms.Textarea() , help_text="Breve descrição sobre o assunto")
+	body = forms.CharField(widget = forms.Textarea(), help_text= "Coluna da Página")
+
 	class Meta:
 		model = Page
 		fields = ('category','title','description','body')
@@ -38,7 +40,10 @@ class CadastroForm(forms.ModelForm):
       		return cleaned_data
 
 class DenunciaForm(forms.ModelForm):
-
+	email = forms.EmailField(label="Seu email")
+	title = forms.CharField(max_length = 100, label= "Título da Denúncia")
+	text= forms.CharField(widget=forms.Textarea(),label = "Digite Sua Denúncia")
+	Category = forms.CharField(max_length = 100, label  = "Tipo de sua Denúncia")
 	class Meta:
 		model = Denuncias
 		fields= ('email','title','text','Category')
