@@ -88,9 +88,8 @@ DATABASES = {
 
 
 #HEROKU
-
+# Parse database configuration from $DATABASE_URL
 #DATABASES['default'] =  dj_database_url.config()
-#DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
