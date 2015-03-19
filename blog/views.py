@@ -105,4 +105,4 @@ def denuncie(request):
 
 def contato (request):
 	context_dict = {}
-	return render(request,'ong/contato1.html', context_dict) 
+	return render(request,'ong/contato.html', context_dict) 

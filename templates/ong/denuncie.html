@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load widget_tweaks %}
 
 <html class="no-js" lang="en">
 <head>
@@ -116,7 +117,7 @@
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
 		<div class="wrapcontact">
-			<h5>ENVIE SUA MENSAGEM</h5>
+			<h5>ENVIE SUA DENÚNCIA</h5>
 			<div class="done">
 				<div class="alert-box success">
 				 Sua mensagem foi enviada! <a href="" class="close">x</a>
@@ -136,7 +137,7 @@
 						{% for fields in formPage.visible_fields %}
 							{{ fields.errors }}
 							{{ fields.label_tag }}
-							{{ fields }}
+							{{ fields |attr:"rows:40"|attr:"cols:80" }}
 						{% endfor %}
 					<input type="submit" id="submit" class="readmore" value="Enviar">
 					</div>

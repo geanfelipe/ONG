@@ -1,5 +1,7 @@
 from django.contrib import admin
 from blog.models import Category,Page,Cadastro,Denuncias
+from blog.forms import *
+from django import forms
 
 class categoryAdmin(admin.ModelAdmin):
 	#prepopulated_fields = {'slug':('name',)}
