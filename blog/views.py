@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, request, HttpResponseRedirect, HttpRequest
 from django.template.response import TemplateResponse
 from django.template.defaultfilters import slugify
-from blog.forms import CategoryForm,PageForms,CadastroForm,DenunciaForm
+from blog.forms import CategoryForm,PageForms,CadastroForm,DenunciaForm,ContatoForm
 from blog.models import Category,Page,Cadastro,Denuncias
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login , logout
@@ -14,9 +14,7 @@ import os
 
 def index(request):
 	context_dict = {}
-	print "\n\n"
-	print (type(request))
-	print "\n\n"
+
 	context_dict['request'] = request
 	context_dict['pages'] = Page.objects.all()[:6]
 
@@ -108,4 +106,18 @@ def denuncie(request):
 
 def contato (request):
 	context_dict = {}
+
+	if request.method =='POST':
+		form = ContatoForm(request.POST)
+
+		if form.is_valid():
+			form.save(commit=True)
+		else:
+			print form.errors
+			context_dict['erro'] = form.errors
+
+	else:
+		form = ContatoForm()
+
+	context_dict['form'] = form
 	return render(request,'ong/contato.html', context_dict) 

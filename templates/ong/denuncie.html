@@ -128,7 +128,7 @@
 			<form method="post" action="." id="contactform">	
 				{% csrf_token %}
 				<div class="form">
-				    <div class="six columns noleftmargin">
+				    
 				    	
 						{% for fieldsInvisivel in formPage.hidden_fields %}
 							{{ fieldsInvisivel }}
@@ -137,10 +137,10 @@
 						{% for fields in formPage.visible_fields %}
 							{{ fields.errors }}
 							{{ fields.label_tag }}
-							{{ fields |attr:"rows:20"|attr:"cols:80" }}
+							{{ fields |attr:"rows:40"|attr:"cols:10" }}
 						{% endfor %}
 					<input type="submit" id="submit" class="readmore" value="Enviar">
-					</div>
+					
 				</form>			
 		</div>
 	</div>

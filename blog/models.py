@@ -60,3 +60,10 @@ class Denuncias(models.Model):
 	def __unicode__(self):
 		return self.title
 
+class Contato(models.Model):
+	nome = models.CharField(max_length=128)
+	email = models.EmailField()
+	mensagem = models.TextField()
+
+ 	def __unicode__(self):
+ 		return 'denuncia de '+self.nome

@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User
 from django import forms
-from blog.models import Category,Page,Cadastro,Denuncias
+from blog.models import Category,Page,Cadastro,Denuncias, Contato
 
 class CategoryForm(forms.ModelForm):
 	name = forms.CharField(max_length=128,help_text="Nome da Categoria")
@@ -47,3 +47,12 @@ class DenunciaForm(forms.ModelForm):
 	class Meta:
 		model = Denuncias
 		fields= ('email','title','text','Category')
+
+class ContatoForm(forms.ModelForm):
+	nome = forms.CharField(required=True, max_length=128, label="Nome")
+	email = forms.EmailField(required=True,label="E-mail")
+	mensagem = forms.CharField(required=True, widget=forms.Textarea(), label="Mensagem")
+	
+	class Meta:
+		model = Contato
+		fields = ('nome','email','mensagem')

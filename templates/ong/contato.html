@@ -75,7 +75,7 @@
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato">Contato</a>
 					</li>
 					
 				</ul>
@@ -115,7 +115,16 @@
 			</div>			
 				<form method="post" action="contact.php" id="contactform">
 				<div class="form">
-				    <div class="six columns noleftmargin">
+
+					{% for fields in form %}
+						{{ fields.label }}
+						{{ fields.errors }}
+						{{ fields |attr:"rows:15"|attr:"cols:30"}}
+
+					{% endfor %}
+
+				    <!--<div class="six columns noleftmargin">
+
 					<label>Nome</label>
 					<input type="text" name="name" class="smoothborder" placeholder="Seu nome *"/>
 					</div>
@@ -125,7 +134,8 @@
 					</div>
 					<label>Mensagem</label>
 					<textarea name="comment" class="smoothborder ctextarea" rows="14" placeholder="Deixe sua mensagem para nós *"></textarea>
-					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="alert('Mensagem enviada com sucesso!')">
+					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="alert('Mensagem enviada com sucesso!')">-->
+					<input type="submit" id="submit" class="readmore" value="Enviar">
 				</form>			
 		</div>
 	</div>
@@ -147,7 +157,7 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="http://www.facebook.com">
-			<img src="images/socialpack/facebooka.png" /></a>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}" /></a>
 		</div>
 	</div>
 	<div class="four columns">
