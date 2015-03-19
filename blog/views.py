@@ -14,12 +14,15 @@ import os
 
 def index(request):
 	context_dict = {}
-	
+	print "\n\n"
+	print (type(request))
+	print "\n\n"
+	context_dict['request'] = request
 	context_dict['pages'] = Page.objects.all()[:6]
 
 	return render(request,"ong/index.html",context_dict)
 
-
+#@login_required
 def add_category(request):
 
 	if request.method == 'POST':
@@ -37,7 +40,7 @@ def add_category(request):
 
 	return render(request,'ong/newCategory.html',{'form':form})
 
-
+#@login_required
 def add_page(request):
 	"""Modefields-->category,title,body,url,views,when"""
 	"""Formfields-->category,title,body"""
