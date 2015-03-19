@@ -121,3 +121,6 @@ def contato (request):
 
 	context_dict['form'] = form
 	return render(request,'ong/contato.html', context_dict) 
+
+def ongs(request):
+	return render(request, 'ong/ongs.html',{})
