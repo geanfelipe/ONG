@@ -14,6 +14,11 @@ import os
 
 def index(request):
 	context_dict = {}
+	
+	if request.user.is_authenticated():
+			print request.user
+	else:
+		print 'nao authenticated'
 
 	context_dict['request'] = request
 	context_dict['pages'] = Page.objects.all()[:6]
@@ -100,3 +105,6 @@ def faca_sua_campanha(request):
 	response.write("<h1>OPA! ainda estamos fazendo essa <a href='/'>parte</a></h1>")
 	return response
 	#return render(request,'ong/facaSuaCampanha.html',{})
+
+def lugares_verdes(request):
+	return render(request,'ong/lugares_verdes.html',{})
