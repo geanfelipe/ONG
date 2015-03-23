@@ -9,10 +9,27 @@
 <meta name="viewport" content="width=device-width"/>
 <title>ONG Retweet</title>
 <!-- Included CSS Files-->
+
 <link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
 <link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
 <link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
 <link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
+
+<script>
+function limparCampos() {
+if(document.getElementById('id_nome').value!="") {
+document.getElementById('id_nome').clear="";
+document.getElementById('id_email').clear="";
+document.getElementById('id_mensagem').clear="";
+}
+}
+function verificarEnvio() {
+
+}
+}
+
+</script>
+
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -24,7 +41,7 @@
 <div id="panel">
 	<div class="row">
 		<div class="twelve columns">
-			<img src="images/info.png" class="pics" alt="info">
+			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
 			<div class="infotext">
 				(-------- frase de impacto---------)
 			</div>
@@ -107,36 +124,45 @@
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
 		<div class="wrapcontact">
-			<h5>ENVIE SUA MENSAGEM</h5>
+			<h5>ENVIE SUA MENSAGEM</h5><br>
 			<div class="done">
 				<div class="alert-box success">
 				 Sua mensagem foi enviada! <a href="" class="close">x</a>
 				</div>
 			</div>			
-				<form method="post" action="contact.php" id="contactform">
+				<form method="post" action="" id="contactform">
 				<div class="form">
+					
+					
 
-					{% for fields in form %}
+				
+					<!--{% for fields in form %}
 						{{ fields.label }}
 						{{ fields.errors }}
 						{{ fields |attr:"rows:15"|attr:"cols:30"}}
+					{% endfor %}-->
+					
 
-					{% endfor %}
-
-				    <!--<div class="six columns noleftmargin">
-
-					<label>Nome</label>
-					<input type="text" name="name" class="smoothborder" placeholder="Seu nome *"/>
+				    <div class="six columns noleftmargin">
+				    {% csrf_token %}
+					{{ nome.label }}
+					{{ nome }}
+					{{ nome.errors }}
 					</div>
+
 					<div class="six columns">
-					<label>E-mail</label>
-					<input type="text" name="email" class="smoothborder" placeholder="Seu e-mail *"/>
+					{{ email.label }}
+					{{ email }}
+					{{ email.errors }}
 					</div>
-					<label>Mensagem</label>
-					<textarea name="comment" class="smoothborder ctextarea" rows="14" placeholder="Deixe sua mensagem para nós *"></textarea>
-					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="alert('Mensagem enviada com sucesso!')">-->
-					<input type="submit" id="submit" class="readmore" value="Enviar">
+
+					{{ mensagem.label }}
+					{{ mensagem }}
+					{{ mensagem.errors }}
+
+					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="alert('Mensagem enviada com sucesso!')">
 				</form>			
+			</div>
 		</div>
 	</div>
 												

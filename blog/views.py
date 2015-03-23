@@ -5,7 +5,7 @@ from django.http import HttpResponse, request, HttpResponseRedirect, HttpRequest
 from django.template.response import TemplateResponse
 from django.template.defaultfilters import slugify
 from blog.forms import CategoryForm,PageForms,CadastroForm,DenunciaForm,ContatoForm
-from blog.models import Category,Page,Cadastro,Denuncias
+from blog.models import Category,Page,Cadastro,Denuncias,Contato
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login , logout
 from datetime import datetime
@@ -102,7 +102,11 @@ def denuncie(request):
 	else:
 		form = DenunciaForm()
 
-	return render(request,'ong/denuncie.html',{'formPage':form})
+	context_dict['email'] = form['email']
+	context_dict['title'] = form['title']
+	context_dict['text'] = form['text']
+	context_dict['category'] = form['Category']
+	return render(request,'ong/denuncie.html',context_dict)
 
 def contato (request):
 	context_dict = {}
@@ -119,8 +123,14 @@ def contato (request):
 	else:
 		form = ContatoForm()
 
-	context_dict['form'] = form
+	context_dict['nome'] = form['nome']
+	context_dict['email'] = form['email']
+	context_dict['mensagem'] = form['mensagem']
 	return render(request,'ong/contato.html', context_dict) 
+
 
 def ongs(request):
 	return render(request, 'ong/ongs.html',{})
+
+def campanhas(request):
+	return render(request,'ong/campanha1.html',{})

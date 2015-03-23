@@ -117,30 +117,37 @@
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
 		<div class="wrapcontact">
-			<h5>ENVIE SUA DENÚNCIA</h5>
+			<h5>ENVIE SUA MENSAGEM</h5>
 			<div class="done">
 				<div class="alert-box success">
 				 Sua mensagem foi enviada! <a href="" class="close">x</a>
 				</div>
 			</div>			
-				
-				
-			<form method="post" action="." id="contactform">	
-				{% csrf_token %}
+				<form method="post" action="" id="contactform">
 				<div class="form">
-				    
-				    	
-						{% for fieldsInvisivel in formPage.hidden_fields %}
-							{{ fieldsInvisivel }}
-						{% endfor %}
+				    {% csrf_token %}
+				    <div class="six columns noleftmargin">
+					{{ title.label }}
+					{{ title }}
+					{{ title.errors }}
+					</div>
 
-						{% for fields in formPage.visible_fields %}
-							{{ fields.errors }}
-							{{ fields.label_tag }}
-							{{ fields |attr:"rows:40"|attr:"cols:10" }}
-						{% endfor %}
-					<input type="submit" id="submit" class="readmore" value="Enviar">
+					<div class="six columns">
+					{{ email.label }}
+					{{ email }}
+					{{ email.errors }}
+					</div>
+
+					{{ text.label }}
+					{{ text }}
+					{{ text.errors }}
+
+					{{ category.label }}
+					{{ category }}
+					{{ category.errors }}
 					
+					<input type="submit" id="submit" class="readmore" value="Enviar">
+				</div>
 				</form>			
 		</div>
 	</div>
