@@ -20,42 +20,6 @@ def index(request):
 
 	return render(request,"ong/index.html",context_dict)
 
-#@login_required
-def add_category(request):
-
-	if request.method == 'POST':
-		form = CategoryForm(request.POST)
-
-		if form.is_valid():
-			form.save(commit=True)
-
-			return HttpResponse("<h1>Ok</h1>")
-		else:
-			print form.errors
-			print form.error_class
-	else:
-		form = CategoryForm()
-
-	return render(request,'ong/newCategory.html',{'form':form})
-
-#@login_required
-def add_page(request):
-	"""Modefields-->category,title,body,url,views,when"""
-	"""Formfields-->category,title,body"""
-	if request.method=='POST':
-		formPage = PageForms(request.POST)
-
-		if formPage.is_valid():
-			formPage.save(commit=True)
-
-		else:
-			print formPage.errors
-	else:
-		formPage = PageForms()
-	
-	return render(request,'ong/newPage.html',{'form':formPage})
-
-
 def listarPaginas(request, category_slug):
 	context_dict = {}
 
@@ -83,10 +47,6 @@ def page(request,category_slug, page_url):
 		context_dict['page']= Page.objects.filter(url=page_url)
 
 	return render(request,'ong/artigo.html',context_dict)
-
-def administracao(request):
-
-	return render (request, 'ong/administracao.html',{})
 
 def denuncie(request):
 	context_dict = {}
@@ -136,4 +96,7 @@ def campanhas(request):
 	return render(request,'ong/campanhas.html',{})
 
 def faca_sua_campanha(request):
-	return render(request,'ong/facaSuaCampanha.html',{})
+	response = HttpResponse()
+	response.write("<h1>OPA! ainda estamos fazendo essa <a href='/'>parte</a></h1>")
+	return response
+	#return render(request,'ong/facaSuaCampanha.html',{})
