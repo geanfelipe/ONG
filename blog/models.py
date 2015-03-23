@@ -18,6 +18,13 @@ class Category(models.Model):
 		return self.name
 		#return u"%s - %d %d" %(self.name,self.views,self.likes)
 
+class Autores(models.Model):
+	nome = models.CharField(max_length=128)
+	sobre = models.TextField()
+
+	def __unicode__(self):
+		return self.nome
+
 class Page(models.Model):
 	category = models.ForeignKey(Category)
 	title = models.CharField(max_length=128, unique=True)
@@ -27,6 +34,7 @@ class Page(models.Model):
 	when = models.DateTimeField('data de criação', auto_now_add=True, db_index=True)
 	slugCategory = models.SlugField(unique=True,db_index=True)
 	body = models.TextField()
+	autor = models.ForeignKey(Autores)
 
 	def save(self, *args, **kwargs):
 		self.url = slugify(self.title)
@@ -36,20 +44,6 @@ class Page(models.Model):
 	#equals to __str__
 	def __unicode__(self):
 		return self.title
-
-class Cadastro(models.Model):
-	"""
-	--> dedicated to ONG
-	"""
-
-	name = models.CharField(max_length=128, unique=True)
-	website = models.URLField(blank=True)
-	picture = models.ImageField(upload_to='profile_images/%Y/%m/%d',blank=True)
-	email = models.EmailField(unique=True)
-
-
-	def __unicode__(self):
-		return self.name
 
 class Denuncias(models.Model):
 	email = models.EmailField()

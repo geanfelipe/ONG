@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User
 from django import forms
-from blog.models import Category,Page,Cadastro,Denuncias, Contato
+from blog.models import Category,Page,Denuncias, Contato
 
 class CategoryForm(forms.ModelForm):
 	name = forms.CharField(max_length=128,help_text="Nome da Categoria")
@@ -22,22 +22,6 @@ class PageForms(forms.ModelForm):
 		model = Page
 		fields = ('category','title','description','body')
        
-
-class CadastroForm(forms.ModelForm):
-	
-
-	class Meta:
-		model = Cadastro
-		fields = ('name','website','picture','email')
-
-	def clean(self):
-		cleaned_data = self.cleaned_data
-		website = cleaned_data.get('website')
-		# If url is not empty and doesn't start with 'http://', prepend 'http://'.
-	    	if website and not website.startswith('http://'):
-       			website = 'http://' + website
-		    	cleaned_data['website'] = website
-      		return cleaned_data
 
 class DenunciaForm(forms.ModelForm):
 	email = forms.EmailField(label="Seu email")

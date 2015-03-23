@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, request, HttpResponseRedirect, HttpRequest
 from django.template.response import TemplateResponse
 from django.template.defaultfilters import slugify
-from blog.forms import CategoryForm,PageForms,CadastroForm,DenunciaForm,ContatoForm
-from blog.models import Category,Page,Cadastro,Denuncias,Contato
+from blog.forms import CategoryForm,PageForms,DenunciaForm,ContatoForm
+from blog.models import Category,Page,Denuncias,Contato
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login , logout
 from datetime import datetime
@@ -51,7 +51,7 @@ def page(request,category_slug, page_url):
 	except:
 		context_dict['page']= Page.objects.filter(url=page_url)
 
-	return render(request,'ong/artigo.html',context_dict)
+	return render(request,'ong/artigos/artigo.html',context_dict)
 
 def denuncie(request):
 	context_dict = {}
