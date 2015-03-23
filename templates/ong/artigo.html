@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html class="no-js" lang="pt-br">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width"/>
+<title>{{page.title}}</title>
+<!-- Included CSS Files-->
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
+</head>
+<body>
+
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
+			<div class="infotext">
+				(-------- frase de impacto---------)
+			</div>
+		</div> 
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
+
+<!-- HEADER
+================================================== -->
+<div class="row">	
+		<div class="four columns">
+			<div class="logo">
+				<a href="/"><h4>ONG Retweet</h4></a>
+			</div>
+		</div>
+		<div class="eight columns noleftmarg">		
+			<nav id="nav-wrap">
+				<ul class="nav-bar sf-menu">
+				
+					<li class="current">
+					<a href="/">Inicio</a>						
+					</li>
+					
+					<li>
+					<a href="verdes.html">Lugares Verdes</a>
+						<ul>
+						<li><a href="eventos.html">Eventos</a></li>
+						</ul>
+					<li>
+					
+					<li> 
+					<a href="#">Campanhas</a>
+						<ul>
+						<li><a href="campanhas/">Conheça mais</a></li>
+						<li><a href="faca-sua-campanha/">Faça sua campanha</a></li>
+						</ul>
+					</li>
+					
+					<li>
+					<a href="ongs.html">ONGs</a>
+					</li>
+					
+					<li>
+					<a href="denuncie/">Denuncie</a>						
+					</li>
+					
+					<li>
+					<a href="contato/">Contato</a>
+					</li>
+					
+				</ul>
+				</nav>
+		</div>	
+</div>
+<div class="clear">
+</div>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="eight columns">
+			<p class="bread leftalign">
+				<!-- You are here: <a href="index.html"> Home</a> / <a href="blogpage2.html">Blog second style</a> -->
+			</p>
+		</div>
+		<div class="four columns">
+			<div class="row collapse">
+				<div class="ten mobile-three columns">
+					<input type="text" class="nomargin" placeholder="Pesquisar...">
+				</div>
+				<div class="two mobile-one columns">
+					<a href="#" class="postfix button expand">Ir</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+<!-- CONTENT 
+================================================== -->
+<div class="row">
+	<div class="twelve columns noleftmargin">
+	     <!-- MAIN CONTENT -->
+		<div class="eight columns">
+			{% if page %}
+				<div class="sectiontitle">
+					<h4>{{page.title}}</h4>
+				</div>
+				<p>
+					<img src="{% static "ong/images/temp/post.jpg" %}" class="blogimage grayscale" alt="">
+				</p>
+
+				{{page.body}}
+
+
+			<!--
+			<p>
+				 Mrs. Delorane had died of decline: people would say to one another, in confidence, they hoped Ellin might escape it. The largest and <b>best farm</b> in the neighbourhood of Timberdale, larger than even that of the Ashtons, was called the Dower Farm.
+			</p>
+			<p>
+				Out-of-doors he was the keen, active, thorough farmer; indoors he lived as a gentleman. He had four children: three boys and one girl. Nothing must prevent her journey upon the desert!
+			</p>
+			<p>
+				From her window she looked out toward it, so wonderful, so superb, so exquisite, weird and beautiful. Exactly, she told herself, like a big, black smudge.
+			</p>
+			<p>
+				But she cuddled in bed with one knee up to her neck in cute boyish fashion, laughing softly at the remembrance of another time when she had popped a cigarette stump into the eye of a London bobby from the top of a bus.
+			</p>
+			<p>
+				And such a merry fight as she had put up when he had yanked her down! She was wearing her usual boy's clothes and when she had given her real name at the station, the policeman wouldn't believe it of her and the matron had resigned rather than carry the investigation further.
+			</p><br/> -->
+			<div class="panel"><p> Comentários</p> </div>
+				
+		</div>			
+			<hr>
+			<div class="gravatar">
+				<img src="{% static "ong/images/gravatar.png" %}" alt="">
+			</div>
+			<h5>Sam
+			<span class="commentdate">
+				- {{ page.when }}
+			</span>
+			</h5>
+			
+			<p>
+				But she cuddled in bed with one knee up to her neck in cute boyish fashion, laughing softly at the remembrance of another time when she had popped a cigarette stump into the eye of a London bobby from the top of a bus.  Temporibus autem quibusdam.
+			</p>
+			<br class="clear">
+			<h5>Deixe seu comentário:</h5>		
+			<input type="text" class="five smoothborder" placeholder="Nome *"/>			
+			<input type="text" class="five smoothborder" placeholder="E-mail *"/>		
+			<textarea class="six smoothborder" rows="7" placeholder="Comentário *"></textarea>
+			<button type="submit" class="readmore">Publicar</button>
+		</div>
+		<!-- SIDEBAR -->
+		<div class="four columns">
+			<h6 class="sidebartitle">VEJA AGORA</h6>
+			<div class="avatar">
+				<img src="{% static "ong/images/temp/author1.png" %}" alt="">
+			</div>
+			<p>
+				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
+			</p>
+			<div class="avatar">
+				<img src="{% static "ong/images/temp/author2.png" %}" alt="">
+			</div>
+			<p>
+				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
+			</p>
+			<div class="avatar">
+				<img src="{% static "ong/images/temp/author3.png" %}" alt="">
+			</div>
+			<p>
+				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
+			</p>
+			<br class="clear"/>
+			<h6 class="sidebartitle">POPULAR TAGS</h6>
+			<a href="#" class="tags">Photography</a>
+			<a href="#" class="tags">Vintage</a>
+			<a href="#" class="tags">Nature</a>
+			<a href="#" class="tags">Design</a>
+			<a href="#" class="tags">Printing</a>
+			<a href="#" class="tags">Contemporary</a>
+			<a href="#" class="tags">Classic</a>
+			<a href="#" class="tags">Elegant</a>
+			<a href="#" class="tags">Graphics</a>
+			<br class="clear"/>
+			<br/><br/>
+			<h6 class="sidebartitle">POPULAR POSTS</h6>
+			<p>
+				7 Oct 2013
+			</p>
+			<p>
+				Many pieces were proposed, but none seemed suitable, because each one wished to play a good and suitable part ...
+			</p>
+			<p>
+				6 Sept 2013
+			</p>
+			<p>
+				It was ready for production, when through accident we were disappointed about securing the private theatre on ...
+			</p>
+			<p>
+				4 Aug 2013
+			</p>
+			<p>
+				The over-kind praise which it won encouraged me to have the play printed. I decided, as I could see no other prospects...
+			</p> 
+		{% else %}
+				<h1>Página não existe</h1>
+		{% endif %}
+		</div>
+		
+	</div>
+<!--===CONTENT===-->
+</div>
+<div class="hr">
+</div>
+<!-- TWITTER
+================================================== -->
+<div class="tweetarea"><div class="tweettext"><div class="row"></div></div></div>
+<!-- FOOOTER 
+================================================== -->
+<div id="footer">
+	<footer class="row">
+	<p class="back-top floatright">
+		<a href="#top"><span></span></a>
+	</p>
+	<div class="four columns">
+	<h1>COMPARTILHE</h1>
+		<div class="social facebook">
+			<a href="http://www.facebook.com">
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
+			</a>
+		</div>
+	</div>
+	<div class="four columns">
+	<h1>APOIO</h1>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>				
+	</div>
+	<div class="four columns">
+		<p> jhabfjhvfdsjhvbs </p>
+		<p> jhabfjhvfdsjhvbs </p>
+		<p> jhabfjhvfdsjhvbs </p>
+	</footer>
+</div>
+<div class="copyright">
+	<div class="row">
+		<div class="six columns">
+			 &copy;<span class="small"> Copyright 2015 ONG Retweet</span>
+		</div>		
+</div>
+<!-- JAVASCRIPTS 
+================================================== -->
+<!-- Javascript files placed here for faster loading -->
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+
+</body>
+</html>
