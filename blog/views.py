@@ -133,4 +133,4 @@ def ongs(request):
 	return render(request, 'ong/ongs.html',{})
 
 def campanhas(request):
-	return render(request,'ong/campanha1.html',{})
+	return render(request,'ong/campanhas.html',{})
