@@ -58,7 +58,7 @@ class Denuncias(models.Model):
 	Category = models.CharField(max_length=128)
 
 	def __unicode__(self):
-		return self.title
+		return 'Denuncia de '+self.title
 
 class Contato(models.Model):
 	nome = models.CharField(max_length=128)
@@ -66,4 +66,4 @@ class Contato(models.Model):
 	mensagem = models.TextField()
 
  	def __unicode__(self):
- 		return 'denuncia de '+self.nome
+ 		return 'Contato de '+self.nome

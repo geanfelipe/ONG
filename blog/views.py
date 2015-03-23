@@ -134,3 +134,6 @@ def ongs(request):
 
 def campanhas(request):
 	return render(request,'ong/campanhas.html',{})
+
+def faca_sua_campanha(request):
+	return render(request,'ong/facaSuaCampanha.html',{})
