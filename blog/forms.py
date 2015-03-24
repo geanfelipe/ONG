@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User
 from django import forms
-from blog.models import Category,Page,Denuncias, Contato
+from blog.models import Category,Page,Denuncias, Contato,Campanhas
 
 class CategoryForm(forms.ModelForm):
 	name = forms.CharField(max_length=128,help_text="Nome da Categoria")
@@ -22,6 +22,15 @@ class PageForms(forms.ModelForm):
 		model = Page
 		fields = ('category','title','description','body')
        
+class CampanhasForm(forms.ModelForm):
+	nome = forms.CharField(max_length=128,label="Nome")
+	email = forms.EmailField(label="E-mail")
+	mensagem = forms.CharField(widget=forms.Textarea(),label="Descrição")
+
+	class Meta:
+		model = Campanhas
+		fields = ('nome','email','mensagem')
+
 
 class DenunciaForm(forms.ModelForm):
 	email = forms.EmailField(label="Email")

@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, request, HttpResponseRedirect, HttpRequest
 from django.template.response import TemplateResponse
 from django.template.defaultfilters import slugify
-from blog.forms import CategoryForm,PageForms,DenunciaForm,ContatoForm
-from blog.models import Category,Page,Denuncias,Contato
+from blog.forms import CategoryForm,PageForms,DenunciaForm,ContatoForm,CampanhasForm
+from blog.models import Category,Page,Denuncias,Contato,Campanhas
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login , logout
 from datetime import datetime
@@ -112,10 +112,23 @@ def campanhas(request):
 	return render(request,'ong/campanhas.html',{})
 
 def faca_sua_campanha(request):
-	response = HttpResponse()
-	response.write("<h1>OPA! ainda estamos fazendo essa <a href='/'>parte</a></h1>")
-	return response
-	#return render(request,'ong/facaSuaCampanha.html',{})
+
+	context_dict= {}
+	if request.method=='POST':
+		form = CampanhasForm(request.POST)
+
+		if form.is_valid():
+			form.save(commit=True)
+		else:
+			print form.errors
+	else:
+		form = CampanhasForm()
+
+	context_dict['nome'] = form['nome']
+	context_dict['email'] = form['email']
+	context_dict['mensagem'] = form['mensagem']
+
+	return render(request,'ong/campanha2.html',{})
 
 def lugares_verdes(request):
 	return render(request,'ong/verdes.html',{})
@@ -127,30 +140,38 @@ def eventos(request):
 	return render(request,'ong/eventos.html',{})
 
 
+def campanhas(request):
+	return render(request,'ong/campanha.html',{})
+
+def conheca_mais(request):
+	return render(request,'ong/campanha1.html',{})
+
 def artigo1(request):
 	return render(request,'ong/docs/artigo.html',{})
 
 def artigo2(request):
 	return render(request,'ong/docs/artigo2.html',{})
-"""	
+
 def artigo3(request):
-	return render(request,'ong/artigo.html',{})
+	return render(request,'ong/docs/artigo3.html',{})
 	
 def artigo4(request):
-	return render(request,'ong/artigo.html',{})
+	return render(request,'ong/docs/artigo4.html',{})
 
 def artigo5(request):
-	return render(request,'ong/artigo.html',{})
+	return render(request,'ong/docs/artigo5.html',{})
 
 def artigo6(request):
-	return render(request,'ong/artigo.html',{})
+	return render(request,'ong/docs/artigo6.html',{})
 
 def artigo7(request):
-	return render(request,'ong/artigo.html',{})
+	return render(request,'ong/docs/artigo7.html',{})
 
 def artigo8(request):
-	return render(request,'ong/artigo.html',{})
+	return render(request,'ong/docs/artigo8.html',{})
 
 def artigo9(request):
-	return render(request,'ong/artigo.html',{})
-"""
+	return render(request,'ong/docs/artigo9.html',{})
+
+def artigo10(request):
+	return render(request,'ong/docs/artigo10.html',{})

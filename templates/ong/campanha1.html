@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
-<meta charset="iso-881877"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Campanhas</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
+<!-- Included CSS Files-->
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->    
 </head>
 <body>
-<script type="text/javascripts">
-	var agora = new Date();
-	alert(agora);
-</script>
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{% static "ong/images/rt_logo.png" %}" class="pics" alt="info">
+			<div class="infotext">
+				O mundo nÃ£o muda sozinho, faÃ§amos nossa parte para salvÃ¡-lo! Retweet essa ideia ^.^
+			</div>
+		</div> 
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
+
 <!-- HEADER
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -28,21 +46,21 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Início</a>						
+					<a href="/">InÃ­cio</a>						
 					</li>
 					
 					<li>
-					<a href="verdes.html">Lugares Verdes</a>
+					<a href="/lugares-verdes/">Lugares Verdes</a>
 						<ul>
-						<li><a href="eventos.html">Eventos</a></li>
+						<li><a href="/eventos/">Eventos</a></li>
 						</ul>
 					<li>
 					
 					<li> 
-					<a href="campanha.html">Campanhas</a>
+					<a href="/campanhas/">Campanhas</a>
 						<ul>
-						<li><a href="campanha1.html">Conheça mais</a></li>
-						<li><a href="campanha2.html">Faça sua campanha</a></li>
+						<li><a href="/conheca-mais/">ConheÃ§a mais</a></li>
+						<li><a href="campanha2.html">FaÃ§a sua campanha</a></li>
 						</ul>
 					</li>
 					
@@ -51,11 +69,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -64,62 +82,49 @@
 </div>
 <div class="clear">
 </div>
-<!-- SUBHEADER
-================================================== -->
-<div id="subheader">
-	<div class="row">
-		<div class="eight columns">
-			<p class="bread leftalign">
-				<!-- You are here: <a href="index.html"> Home</a> / <a href="blogpage2.html">Blog second style</a> -->
-			</p>
-		</div>		
-	</div>
-</div>
-<div class="hr">
-</div>
 <!-- CONTENT 
 ================================================== -->
 <!-- SINGLE COLUMN-->
 <div class="row">
 	<div class="twelve columns">
-		<h5>Projeto Baú Cênico Ambiental</h5>
+		<h5>Projeto BaÃº CÃªnico Ambiental</h5>
 		<hr>
 		<p>
-		Busca junto a entidades governamentais ou não e ONG´s, viabilizar a educação ambiental; conscientizando o público alvo sobre a importância da preservação do meio ambiente e as consequências de não fazê-lo.
+		Busca junto a entidades governamentais ou nÃ£o e ONGÂ´s, viabilizar a educaÃ§Ã£o ambiental; conscientizando o pÃºblico alvo sobre a importÃ¢ncia da preservaÃ§Ã£o do meio ambiente e as consequÃªncias de nÃ£o fazÃª-lo.
 		</p>
 		<p><a href="http://www.natal.rn.gov.br/semurb/paginas/ctd-685.html" target="_blank">Saiba mais</a></p>
 	</div>
 	<div class="twelve columns">
-		<h5>Movimento Pró-Pitimbu</h5>
+		<h5>Movimento PrÃ³-Pitimbu</h5>
 		<hr>
-		<p>É um movimento multidisciplinar formado por profissionais das mais diversas áreas
-(Engenheiros Civis, Arquitetos, Jornalistas, Biólogos, Geógrafos, etc). Foi criado a 3 anos e
-trata-se de uma grande mobilização de indivíduos que cumprem a cidadania, tendo como objetivo
-defender a qualidade da água que abastece Natal e em particular proteger e preservar o rio
+		<p>Ã‰ um movimento multidisciplinar formado por profissionais das mais diversas Ã¡reas
+(Engenheiros Civis, Arquitetos, Jornalistas, BiÃ³logos, GeÃ³grafos, etc). Foi criado a 3 anos e
+trata-se de uma grande mobilizaÃ§Ã£o de indivÃ­duos que cumprem a cidadania, tendo como objetivo
+defender a qualidade da Ã¡gua que abastece Natal e em particular proteger e preservar o rio
 Pitimbu.</p>
-		<p>O Movimento Pró-Pitimbu tem como slogan a frase “Salve o Pitimbu- Nós dependemos dele”.</p>
+		<p>O Movimento PrÃ³-Pitimbu tem como slogan a frase Â“Salve o Pitimbu- NÃ³s dependemos deleÂ”.</p>
 		<p><a href="http://mineiropt.com.br/media/uploads/publications/arq46bc6f42e16c5.pdf" target="_blank">Saiba mais</a></p>
 	</div>
 	<div class="twelve columns">
-		<h5>Ação Natal Verde</h5>
+		<h5>AÃ§Ã£o Natal Verde</h5>
 		<hr>
 		<p>
-			O proprietário do Sebo Rio Branco idealizou e vem desenvolvendo o projeto Ação Natal Verde. Todo mês é feita a distribuição de mudas de plantas aos clientes do sebo. Uma maneira de conscientizar e incentivar os moradores a lutar pelo meio ambiente.
+			O proprietÃ¡rio do Sebo Rio Branco idealizou e vem desenvolvendo o projeto AÃ§Ã£o Natal Verde. Todo mÃªs Ã© feita a distribuiÃ§Ã£o de mudas de plantas aos clientes do sebo. Uma maneira de conscientizar e incentivar os moradores a lutar pelo meio ambiente.
 		</p>
 		<p><a href="http://seboriobrancoacaonatalverde.blogspot.com.br/" target="_blank">Saiba mais</a></p>
 	</div>
 	<div class="twelve columns">
-		<h5>Barco Escola Chama-Maré</h5>
+		<h5>Barco Escola Chama-MarÃ©</h5>
 		<hr>
 		<p>		
-			O Barco Escola Chama-Maré é um projeto desenvolvido pelo Governo do Estado, através do Instituto de Desenvolvimento Sustentável e Meio Ambiente - IDEMA, voltado para ações de educação ambiental no estuário do rio Potengi. Teve início em outubro de 2006 e funciona atualmente de terça à sábado com quatro aulas-passeio por dia, atendendo um público médio de 3.000 pessoas/mês.
+			O Barco Escola Chama-MarÃ© Ã© um projeto desenvolvido pelo Governo do Estado, atravÃ©s do Instituto de Desenvolvimento SustentÃ¡vel e Meio Ambiente - IDEMA, voltado para aÃ§Ãµes de educaÃ§Ã£o ambiental no estuÃ¡rio do rio Potengi. Teve inÃ­cio em outubro de 2006 e funciona atualmente de terÃ§a Ã  sÃ¡bado com quatro aulas-passeio por dia, atendendo um pÃºblico mÃ©dio de 3.000 pessoas/mÃªs.
 		</p>
 		<p><a href="http://www.idema.rn.gov.br/Conteudo.asp?TRAN=ITEM&TARG=351&ACT=null&PAGE=null&PARM=null&LBL=Projetos#sthash.dtYid3V3.dpuf" target="_blank">Saiba mais</a></p>
 	</div>
 	<div class="twelve columns">
-		<h5>Programa Água Azul</h5>
+		<h5>Programa Ãgua Azul</h5>
 		<hr>	
-	<p>O Programa Água Azul consiste na medição e verificação periódica de parâmetros de qualidade de água, usada para o acompanhamento da condição atual, sua evolução e controle da qualidade do corpo de água, além de possibilitar a projeção de situações futuras. O Programa tem por objetivos realizar o monitoramento sistemático da qualidade das águas dos principais corpos d'água interiores norte-rio-grandenses, bem como das águas subterrâneas, verificar as condições de balneabilidade de diversas praias do Estado, além de promover uma investigação passivo ambiental, decorrente da contaminação, por derivados de petróleo, do aquífero na Cidade de Natal.</p>
+	<p>O Programa Ãgua Azul consiste na mediÃ§Ã£o e verificaÃ§Ã£o periÃ³dica de parÃ¢metros de qualidade de Ã¡gua, usada para o acompanhamento da condiÃ§Ã£o atual, sua evoluÃ§Ã£o e controle da qualidade do corpo de Ã¡gua, alÃ©m de possibilitar a projeÃ§Ã£o de situaÃ§Ãµes futuras. O Programa tem por objetivos realizar o monitoramento sistemÃ¡tico da qualidade das Ã¡guas dos principais corpos d'Ã¡gua interiores norte-rio-grandenses, bem como das Ã¡guas subterrÃ¢neas, verificar as condiÃ§Ãµes de balneabilidade de diversas praias do Estado, alÃ©m de promover uma investigaÃ§Ã£o passivo ambiental, decorrente da contaminaÃ§Ã£o, por derivados de petrÃ³leo, do aquÃ­fero na Cidade de Natal.</p>
 	<p><a href="http://www.programaaguaazul.rn.gov.br/" target="_blank">Saiba mais</a></p>
 </div>
 </div>
@@ -138,12 +143,12 @@ Pitimbu.</p>
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -152,11 +157,11 @@ Pitimbu.</p>
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
-		<h5 class="subheader">Organização do Projeto</h5>
-		<p> Professora Lúcia Costa </p>
+		<h5 class="subheader">OrganizaÃ§Ã£o do Projeto</h5>
+		<p> Professora LÃºcia Costa </p>
 		<p> Sociologia III </p>		
 	</footer>
 </div>
@@ -169,19 +174,17 @@ Pitimbu.</p>
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="javascripts/foundation.min.js"></script>  
-<script src="javascripts/elasticslideshow.js"></script>
-<script src="javascripts/jquery.nivo.slider.pack.js"></script>    
-<script src="javascripts/jquery.carouFredSel-6.0.5-packed.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+<script src="{% static "ong/javascripts/formvalidation.js" %}"></script>
 </body>
 </html>

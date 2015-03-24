@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Faça sua campanha!</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
+<title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->    
- <script type="text/javascript">
- 	function mensagem() {
- 		alert("A criação da sua campanha foi solicitada! Agora, aguarde apenas que a nossa equipe analise todas as informações e entre em contato com você para iniciar a divulgação (através do email informado).")
- 	}
- </script>
 </head>
 <body>
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{% static "ong/images/rt_logo.png" %}" class="pics" alt="info">
+			<div class="infotext">
+				O mundo não muda sozinho, façamos nossa parte para salvá-lo! Retweet essa ideia ^.^
+			</div>
+		</div> 
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
+
 <!-- HEADER
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -34,20 +46,20 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Início</a>						
+					<a href="/">Início</a>						
 					</li>
 					
 					<li>
-					<a href="verdes.html">Lugares Verdes</a>
+					<a href="/lugares-verdes/">Lugares Verdes</a>
 						<ul>
-						<li><a href="eventos.html">Eventos</a></li>
+						<li><a href="/eventos/">Eventos</a></li>
 						</ul>
 					<li>
 					
 					<li> 
-					<a href="campanha.html">Campanhas</a>
+					<a href="/campanhas/">Campanhas</a>
 						<ul>
-						<li><a href="campanha1.html">Conheça mais</a></li>
+						<li><a href="/conheca-mais/">Conheça mais</a></li>
 						<li><a href="campanha2.html">Faça sua campanha</a></li>
 						</ul>
 					</li>
@@ -57,11 +69,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -69,22 +81,6 @@
 		</div>	
 </div>
 <div class="clear">
-</div>
-<!-- SUBHEADER
-================================================== -->
-<div id="subheader">
-	<div class="row">
-		<div class="twelve columns">
-			<p class="left">
-				 Reuna amigos e crie uma campanha - a divulgação é por nossa conta!
-			</p>
-			<p class="right">
-			
-			</p>
-		</div>
-	</div>
-</div>
-<div class="hr">
 </div>
 <!-- CONTENT 
 ================================================== -->
@@ -96,16 +92,22 @@
 			<h5>CRIAR CAMPANHA</h5>
 			<form method="post" action="contact.php" id="contactform">
 				<div class="form">
-				    <div class="six columns noleftmargin">
-					<label>Nome</label>
-					<input type="text" name="name" class="smoothborder" placeholder="Seu nome *"/>
-					</div>
-					<div class="six columns">
-					<label>E-mail</label>
-					<input type="text" name="email" class="smoothborder" placeholder="Seu e-mail *"/>
-					</div>
-					<label>Mensagem</label>
-					<textarea name="comment" class="smoothborder ctextarea" rows="14" placeholder="Deixe sua mensagem para nós *"></textarea>
+				  
+					 {% csrf_token %}
+				    
+					{{ nome.label }}
+					{{ nome | attr:"placeholder:Seu nome*" }}
+					{{ nome.errors }}
+					
+
+					{{ email.label }}
+					{{ email | attr:"placeholder:Seu e-mail*" }}
+					{{ email.errors }}
+
+					{{ mensagem.label }}
+					{{ mensagem | attr:"placeholder:Deixe sua mensagem para nós*" }}
+					{{ mensagem.errors }}
+				  
 					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="mensagem()">
 				</div>
 				</form>			
@@ -129,12 +131,12 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -143,7 +145,7 @@
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
 		<h5 class="subheader">Organização do Projeto</h5>
@@ -160,17 +162,17 @@
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/formvalidation.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+<script src="{% static "ong/javascripts/formvalidation.js" %}"></script>
 </body>
 </html>

@@ -45,6 +45,11 @@ class Page(models.Model):
 	def __unicode__(self):
 		return self.title
 
+class Campanhas(models.Model):
+	nome = models.CharField(max_length=128)
+	email = models.EmailField()
+	mensagem = models.TextField()
+
 class Denuncias(models.Model):
 	email = models.EmailField()
 	title = models.CharField(max_length=128)

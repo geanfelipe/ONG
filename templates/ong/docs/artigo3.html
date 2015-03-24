@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Noticias</title>
-<link rel="shortcut icon" href="../images/rt_logo.ico" type="image/x-icon" />
+<title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="../stylesheets/style.css">
-<link rel="stylesheet" href="../stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="../stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="../stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->    
 </head>
 <body>
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{% static "ong/images/rt_logo.png" %}" class="pics" alt="info">
+			<div class="infotext">
+				O mundo não muda sozinho, façamos nossa parte para salvá-lo! Retweet essa ideia ^.^
+			</div>
+		</div> 
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
 
 <!-- HEADER
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="../index.html"> <img src="../images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -26,34 +46,34 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="../index.html">Inicio</a>						
+					<a href="/">Início</a>						
 					</li>
 					
 					<li>
-					<a href="../verdes.html">Lugares Verdes</a>
+					<a href="/lugares-verdes/">Lugares Verdes</a>
 						<ul>
-						<li><a href="../eventos.html">Eventos</a></li>
+						<li><a href="eventos.html">Eventos</a></li>
 						</ul>
 					<li>
 					
 					<li> 
-					<a href="../campanha.html">Campanhas</a>
+					<a href="campanha.html">Campanhas</a>
 						<ul>
-						<li><a href="../campanha1.html">Conheça mais</a></li>
-						<li><a href="../campanha2.html">Faça sua campanha</a></li>
+						<li><a href="campanha1.html">Conheça mais</a></li>
+						<li><a href="campanha2.html">Faça sua campanha</a></li>
 						</ul>
 					</li>
 					
 					<li>
-					<a href="../ongs.html">ONGs</a>
+					<a href="ongs.html">ONGs</a>
 					</li>
 					
 					<li>
-					<a href="../denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="../contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -90,7 +110,7 @@
 				<h4>Solidariedade e Sustentabilidade</h4>
 			</div>
 			<p>
-				<img src="../images/samaritano2.jpg" class="blogimage" alt="">
+				<img src="{% static "ong/images/samaritano2.jpg" %}" class="blogimage" alt="">
 			</p>
 			<p align="justify">
 				&nbsp &nbsp A <a href="https://www.facebook.com/beneficente.samaritano?fref=ts" target="_blank"> Associação Beneficente do Bom Samaritano</a>, desde 2012, vem acolhendo pessoas necessitadas
@@ -102,14 +122,14 @@
 				&nbsp A partir disso, com a ajuda de católicos anglicanos (como padres e reverendos locais) e apoio de Michelle Pinheiro (servidora do IFRN - Campus Parnamirim),
 				construiu a Associação do Bom Samaritano.
 			</p>
-			<img src="../images/samaritano.jpg" style="margin-left: 130px;" alt=""> <br/>
+			<img src="{% static "ong/images/samaritano.jpg" %}" style="margin-left: 130px;" alt=""> <br/>
 			<p align="justify">
 				&nbsp &nbsp Além de acolher moradores de rua, dar alimento e abrigo, a Dona Erenice os orienta a procurar um emprego, ou voltar a estudar. &nbsp Ela abriga o morador 
 				na Associação por, no máximo, três meses - para poder dar chance a outros. &nbsp Durante esse período, ela desenvolve várias atividades com essas pessoas, dentre elas,
 				o artesanato com materiais recicláveis. &nbsp Juntamente com eles, utiliza desde garrafas pet a potes de sorvete para produzir objetivos decorativos e úteis (como estes
 				das figuras).				
 			</p><br/>
-			<img src="../images/samaritano3.jpg" style="margin-left: 110px;" alt="">			
+			<img src="{% static "ong/images/samaritano3.jpg" %}" style="margin-left: 110px;" alt="">			
 			<br/>			
 			<div class="panel"><p>Faça como a dona Erenice: pratique o bem com o próximo e com o meio ambiente!</p> </div>
 				
@@ -144,12 +164,12 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="../images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="../images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -158,7 +178,7 @@
 	<h1>APOIO</h1>
 		
 		
-			<img src="../images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
 		<h5 class="subheader">Organização do Projeto</h5>
@@ -172,19 +192,25 @@
 			 &copy;<span class="small"> Copyright 2015 ONG Retweet</span>
 		</div>		
 </div>
+<div class="copyright">
+	<div class="row">
+		<div class="six columns">
+			 &copy;<span class="small"> Copyright 2015 ONG Retweet</span>
+		</div>		
+</div>
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="../javascripts/foundation.min.js"></script>
-<script src="../javascripts/jquery.cycle.js"></script>
-<script src="../javascripts/app.js"></script>
-<script src="../javascripts/modernizr.foundation.js"></script>
-<script src="../javascripts/slidepanel.js"></script>
-<script src="../javascripts/scrolltotop.js"></script>
-<script src="../javascripts/hoverIntent.js"></script>
-<script src="../javascripts/superfish.js"></script>
-<script src="../javascripts/responsivemenu.js"></script>
-<script src="../javascripts/jquery.tweet.js"></script>
-<script src="../javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>
