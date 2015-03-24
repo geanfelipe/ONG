@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<html  class="no-js" lang="en">
+<head>
+<!--<meta charset="utf-8"/>-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+<meta name="viewport" content="width=device-width"/>
+<title>ONG Retweet</title>
+<!-- Included CSS Files-->
+
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
+
+<script>
+function limparCampos() {
+if(document.getElementById('id_nome').value!="") {
+document.getElementById('id_nome').clear;
+document.getElementById('id_email').clear;
+document.getElementById('id_mensagem').clear;
+}
+}
+function verificarEnvio() {
+
+}
+}
+
+</script>
+
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->    
+</head>
+<body>
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
+			<div class="infotext">
+				(-------- frase de impacto---------)
+			</div>
+		</div> 
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
+
+<!-- HEADER
+================================================== -->
+<div class="row">	
+		<div class="four columns">
+			<div class="logo">
+				<a href="/"><h4>ONG Retweet</h4></a>
+			</div>
+		</div>
+		<div class="eight columns noleftmarg">		
+			<nav id="nav-wrap">
+				<ul class="nav-bar sf-menu">
+				
+					<li class="current">
+					<a href="/">Início</a>						
+					</li>
+					
+					<li>
+					<a href="verdes.html">Lugares Verdes</a>
+						<ul>
+						<li><a href="eventos.html">Eventos</a></li>
+						</ul>
+					<li>
+					
+					<li> 
+					<a href="#">Campanhas</a>
+						<ul>
+						<li><a href="campanhas/">Conheça mais</a></li>
+						<li><a href="faca-sua-campanha/">Faça sua campanha</a></li>
+						</ul>
+					</li>
+					
+					<li>
+					<a href="ongs.html">ONGs</a>
+					</li>
+					
+					<li>
+					<a href="/denuncie">Denuncie</a>						
+					</li>
+					
+					<li>
+					<a href="/contato">Contato</a>
+					</li>
+					
+				</ul>
+				</nav>
+		</div>	
+</div>
+<div class="clear">
+</div>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 FALE CONOSCO
+			</p>
+			<p class="right">
+			
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+<!-- CONTENT 
+================================================== -->
+
+<div class="row">
+	<!-- CONTACT FORM -->
+	<div class="twelve columns">
+		<div class="wrapcontact">
+			<h5>ENVIE SUA MENSAGEM</h5><br>
+			<div class="done">
+				<div class="alert-box success">
+				 Sua mensagem foi enviada! <a href="" class="close">x</a>
+				</div>
+			</div>			
+				<form method="post" action="" id="contactform">
+				<div class="form">
+					
+					
+
+				
+					<!--{% for fields in form %}
+						{{ fields.label }}
+						{{ fields.errors }}
+						{{ fields |attr:"rows:15"|attr:"cols:30"}}
+					{% endfor %}-->
+					
+
+				    <div class="six columns noleftmargin">
+				    {% csrf_token %}
+					{{ nome.label }}
+					{{ nome }}
+					{{ nome.errors }}
+					</div>
+
+					<div class="six columns">
+					{{ email.label }}
+					{{ email }}
+					{{ email.errors }}
+					</div>
+
+					{{ mensagem.label }}
+					{{ mensagem }}
+					{{ mensagem.errors }}
+
+					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="alert('Mensagem enviada com sucesso!')">
+				</form>			
+			</div>
+		</div>
+	</div>
+												
+</div>
+<div class="hr">
+</div>
+<!-- LITTLE FOOTER
+================================================== -->
+<div class="tweetarea"><div class="tweettext"><div class="row"></div></div></div></div>
+<!-- FOOOTER 
+================================================== -->
+<div id="footer">
+	<footer class="row">
+	<p class="back-top floatright">
+		<a href="#top"><span></span></a>
+	</p>
+	<div class="four columns">
+	<h1>COMPARTILHE</h1>
+		<div class="social facebook">
+			<a href="http://www.facebook.com">
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}" /></a>
+		</div>
+	</div>
+	<div class="four columns">
+	<h1>APOIO</h1>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>				
+	</div>
+	<div class="four columns">
+		<p> jhabfjhvfdsjhvbs </p>
+		<p> jhabfjhvfdsjhvbs </p>
+		<p> jhbfjhvfdsjhvbs </p>
+	</footer>
+</div>
+<div class="copyright">
+	<div class="row">
+		<div class="six columns">
+			 &copy;<span class="small"> Copyright 2015 ONG Retweet</span>
+		</div>		
+</div>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+</body>
+</html>

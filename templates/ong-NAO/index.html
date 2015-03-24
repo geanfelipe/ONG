@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width"/>
+<title>ONG Retweet</title>
+<!-- Included CSS Files-->
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->    
+</head>
+<body>
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
+			<div class="infotext">
+				(-------- frase de impacto---------)
+			</div>
+		</div> 
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
+
+<!-- HEADER
+================================================== -->
+<div class="row">	
+		<div class="four columns">
+			<div class="logo">
+				<a href="/"><h4>ONG Retweet</h4></a>
+			</div>
+		</div>
+		<div class="eight columns noleftmarg">		
+			<nav id="nav-wrap">
+				<ul class="nav-bar sf-menu">
+				
+					<li class="current">
+					<a href="/">Início</a>						
+					</li>
+					
+					<li>
+					<a href="lugaresverdes/">Lugares Verdes</a>
+						<ul>
+						<li><a href="eventos.html">Eventos</a></li>
+						</ul>
+					<li>
+					
+					<li> 
+					<a href="#">Campanhas</a>
+						<ul>
+						<li><a href="campanhas/">Conheça mais</a></li>
+						<li><a href="faca-sua-campanha/">Faça sua campanha</a></li>
+						</ul>
+					</li>
+					
+					<li>
+					<a href="/ongs">ONGs</a>
+					</li>
+					
+					<li>
+					<a href="/denuncie">Denuncie</a>						
+					</li>
+					
+					<li>
+					<a href="contato/">Contato</a>
+					</li>
+				</ul>
+				</nav>
+		</div>	
+</div>
+<div class="clear">
+</div>
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="eight columns">
+			<p class="bread leftalign">
+				<!-- You are here: <a href="index.html"> Home</a> / <a href="blogpage2.html">Blog second style</a> -->
+			</p>
+		</div>
+		<div class="four columns">
+			<div class="row collapse">
+				<div class="ten mobile-three columns">
+					<input type="text" class="nomargin" placeholder="Pesquisar...">
+				</div>
+				<div class="two mobile-one columns">
+					<a href="#" class="postfix button expand">Ir</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+<!-- CONTENT 
+================================================== -->
+<div class="row">
+	<div class="twelve columns noleftmargin">
+	    <!-- MAIN CONTENT -->
+		<div class="eight columns noleftmargin">
+
+			{% if pages %}
+				{% for page in pages %}
+
+				<div class="six columns">
+					<div class="boxblog">
+						<h5>{{page.title}}</h5>
+						<p class="small date">
+							Postado em : {{page.when}}<span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+						</p>
+						<p>
+							<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb">{{page.description}}
+						</p>
+						<p>
+
+							<a href="/{{ page.slugCategory }}/{{ page.url }}" class="small continue">Continue lendo</a>
+						</p>
+					</div>
+				</div>
+
+				{% endfor %}
+
+			{% else %}
+				<strong>Ainda não ná nenhum artigo no blog</strong>
+			{% endif %}
+
+
+			<!--
+			{% if request.user != 'AnonymousUser' %}
+			<h3>Olá {{request.user}} </h3>
+			{% else %}
+			<h3>  Inscreva-se </h3>
+			{% endif %} -->
+			
+			<!--
+			<div class="six columns">
+				<div class="boxblog">
+					<h5>Casas sustentáveis</h5>
+					<p class="small date">
+						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+					</p>
+					<p>
+						<img src="{% static "ong/images/temp/folio3.jpg" %}" alt="" class="thumb"> Também conhecidas como casas ecológicas, as casas sustentáveis são aquelas projetadas e construídas de maneira a respeitar o meio ambiente, seguindo os princípios da sustentabilidade ambiental e garantindo...
+					</p>
+					<p>
+						<a href="#" class="small continue">Continue reading</a>
+					</p>
+				</div>
+			</div>
+			<div class="six columns">
+				<div class="boxblog">
+					<h5>Lady Speedway</h5>
+					<p class="small date">
+						Posted on: 2 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+					</p>
+					<p>
+						<img src="{% static "ong/images/temp/folio4.jpg" %}" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
+					</p>
+					<p>
+						<a href="#" class="small continue">Continue reading</a>
+					</p>
+				</div>
+			</div>
+			<div class="six columns">
+				<div class="boxblog">
+					<h5>Hotel Biscuit</h5>
+					<p class="small date">
+						Posted on: 3 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+					</p>
+					<p>
+						<img src="{% static "ong/images/temp/folio6.jpg" %}" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
+					</p>
+					<p>
+						<a href="#" class="small continue">Continue reading</a>
+					</p>
+				</div>
+			</div>
+			<div class="six columns">
+				<div class="boxblog">
+					<h5>Private Theater</h5>
+					<p class="small date">
+						Posted on: 2 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+					</p>
+					<p>
+						<img src="{% static "ong/images/temp/folio3.jpg" %}" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
+					</p>
+					<p>
+						<a href="#" class="small continue">Continue reading</a>
+					</p>
+				</div>
+			</div>
+			<div class="six columns">
+				<div class="boxblog">
+					<h5>Transatlantic</h5>
+					<p class="small date">
+						Posted on: 3 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+					</p>
+					<p>
+						<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
+					</p>
+					<p>
+						<a href="#" class="small continue">Continue reading</a>
+					</p>
+				</div>
+			</div>
+		-->
+			<ul class="pagination">
+	<!--			<li class="arrow unavailable"><a href="">&laquo;</a></li>
+				<li class="current"><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li class="unavailable"><a href="">&hellip;</a></li>
+				<li><a href="">12</a></li>
+				<li><a href="">13</a></li>
+				<li class="arrow"><a href="">&raquo;</a></li> -->
+			</ul>
+		</div>
+		<!-- SIDEBAR -->
+		<div class="four columns">
+			<h6 class="sidebartitle">SOBRE </h6>
+			<p>
+				7 Oct 2013
+			</p>
+			<p>
+				Many pieces were proposed, but none seemed suitable, because each one wished to play a good and suitable part ...
+			</p>
+			<p>
+				6 Sept 2013
+			</p>
+			<p>
+				It was ready for production, when through accident we were disappointed about securing the private theatre on ...
+			</p>
+			<p>
+				4 Aug 2013
+			</p>
+			<p>
+				The over-kind praise which it won encouraged me to have the play printed. I decided, as I could see no other prospects...
+			</p>
+			<br class="clear"/>
+			<br/>
+			<h6 class="sidebartitle">QUEM SOMOS</h6>
+			<div class="avatar">
+				<img src="{% static "ong/images/temp/author1.png" %}" alt="">
+			</div>
+			<p>
+				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
+			</p> 
+			<div class="avatar">
+				<img src="{% static "ong/images/temp/author2.png" %}" alt="">
+			</div>
+			<p>
+				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
+			</p>
+			<div class="avatar">
+				<img src="{% static "ong/images/temp/author3.png" %}" alt="">
+			</div>
+			<p>
+				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+<!-- LITTLE FOOTER
+================================================== -->
+<div class="tweetarea"><div class="tweettext"><div class="row"></div></div></div></div>
+<!-- FOOOTER 
+================================================== -->
+<div id="footer">
+	<footer class="row">
+	<p class="back-top floatright">
+		<a href="#top"><span></span></a>
+	</p>
+	<div class="four columns">
+	<h1>COMPARTILHE</h1>
+		<div class="social facebook">
+			<a href="http://www.facebook.com">
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}" /></a>
+		</div>
+	</div>
+	<div class="four columns">
+	<h1>APOIO</h1>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>
+		
+		
+			<p> jhabfjhvfdsjhvbs </p>				
+	</div>
+	<div class="four columns">
+		<p> jhabfjhvfdsjhvbs </p>
+		<p> jhabfjhvfdsjhvbs </p>
+		<p> jhbfjhvfdsjhvbs </p>
+	</footer>
+</div>
+<div class="copyright">
+	<div class="row">
+		<div class="six columns">
+			 &copy;<span class="small"> Copyright 2015 ONG Retweet</span>
+		</div>		
+</div>
+<!-- JAVASCRIPTS 
+================================================== -->
+<!-- Javascript files placed here for faster loading -->
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+</body>
+</html>
