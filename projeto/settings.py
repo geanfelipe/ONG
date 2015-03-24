@@ -74,12 +74,10 @@ ROOT_URLCONF = 'projeto.urls'
 WSGI_APPLICATION = 'projeto.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-#$ ./manage.py migrate
-#$ ./manage.py migrate --database=local
+if not os.environ.has_key('DATABASE_URL'):
+    os.environ['DATABASE_URL'] = 'postgres://postgres:admin@localhost/projeto'
 DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+
 """
 DATABASES = {
     'default': {
