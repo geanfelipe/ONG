@@ -79,7 +79,9 @@ WSGI_APPLICATION = 'projeto.wsgi.application'
 
 #$ ./manage.py migrate
 #$ ./manage.py migrate --database=local
+DATABASES['default'] =  dj_database_url.config()
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -90,7 +92,7 @@ DATABASES = {
         'PORT':  '5432',
     }
 }
-
+"""
 
 #HEROKU
 # Parse database configuration from $DATABASE_URL
