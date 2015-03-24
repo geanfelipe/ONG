@@ -25,6 +25,17 @@ def index(request):
 
 	return render(request,"ong/index.html",context_dict)
 
+def index2(request):
+	context_dict = {}
+
+	return render(request,'ong/index2.html',context_dict)
+
+def index3(request):
+	context_dict = {}
+
+	return render(request,'ong/index3.html',context_dict)
+
+
 def listarPaginas(request, category_slug):
 	context_dict = {}
 

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
 <title>ONG Retweet</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -21,7 +22,7 @@
 <div id="panel">
 	<div class="row">
 		<div class="twelve columns">
-			<img src="images/rt_logo.png" class="pics" alt="info">
+			<img src="{% static "ong/images/rt_logo.png" %}" class="pics" alt="info">
 			<div class="infotext">
 				O mundo não muda sozinho, façamos nossa parte para salvá-lo! Retweet essa ideia ^.^
 			</div>
@@ -37,7 +38,7 @@
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -45,7 +46,7 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Início</a>						
+					<a href="/">Início</a>						
 					</li>
 					
 					<li>
@@ -68,11 +69,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -114,7 +115,7 @@
 				<div class="boxblog">
 					<h5>Economia de energia: Dicas</h5>
 					<p class="small date">
-						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
+						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title=" comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -123,7 +124,7 @@
 							</div>
 						</div>
 			<!-- image here -->
-						<img src="images/poupar.jpg" alt="">
+						<img src="{% static "ong/images/poupar.jpg" %}" alt="">
 					</div>
 					<p align="justify"> Nós da ONG Retweet, organizamos um top 5 com dicas que qualquer um pode por em prática para reduzir o consumo de energia, e 
 					assim, poupar o seu dinheiro no bolso no fim do mês, além de fazer o bem ao meio ambiente.
@@ -134,7 +135,7 @@
 				<div class="boxblog">
 					<h5>Aplicativos Sustentáveis</h5>
 					<p class="small date">
-						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
+						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title="comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -143,7 +144,7 @@
 							</div>
 						</div>
 			<!-- image here -->
-						<img src="images/app.jpg" alt="">
+						<img src="{% static "ong/images/app.jpg" %}" alt="">
 					</div>
 					<p align="justify"> A tecnologia caminha rumo à voos mais altos. Não é diferente com aplicativos digitais, que agora 
 				 aliam consigo o ambientalismo e sustentabilidade. Atualmente, aplicativos gratuitos estão auxiliando na economia de água, 
@@ -155,7 +156,7 @@
 				<div class="boxblog">
 					<h5>Movimento "salve os mangues"</h5>
 					<p class="small date">
-						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
+						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title="comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -164,7 +165,7 @@
 							</div>
 						</div>
 			<!-- image here -->
-						<img src="images/mangues.jpg" alt="">
+						<img src="{% static "ong/images/mangues.jpg" %}" alt="">
 					</div>
 					<p align="justify"> No mês passado, dia 20, ocorreram aqui em nosso estado potiguar campanhas de cunho ambiental. O movimento denominado 
 					“Salve os mangues” visitou a zona de proteção ambiental natalense.
@@ -175,7 +176,7 @@
 				<div class="boxblog">
 					<h5>Carros movidos a energia solar</h5>
 					<p class="small date">
-						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
+						Posted on: 21 Mar 2015 <span class="has-tip tip-top" data-width="90" title="comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -184,7 +185,7 @@
 							</div>
 						</div>
 			<!-- image here -->
-						<img src="images/carro.jpg" alt="">
+						<img src="{% static "ong/images/carro.jpg" %}" alt="">
 					</div>
 					<p align="justify"> Atualmente já estão em estudo e existem protótipos de vários equipamentos que utilizam a energia solar como meio de 
 					abastecimento, um dos mais comuns são os automóveis. A empresa Fiat também tem seu protótipo, é o micro carro urbano de quatro 
@@ -192,16 +193,19 @@
 					</p>
 				</div>
 			</div>
+
+			<div class="six columns">
 			<ul class="pagination">
-				<li class="arrow"><a href="index.html">&laquo;</a></li>
-				<li><a href="index.html">1</a></li>
+				<li class="arrow"><a href="/">&laquo;</a></li>
+				<li><a href="/">1</a></li>
 				<li class="current"><a href="">2</a></li>
-				<li><a href="index3.html">3</a></li>
+				<li><a href="/page3/">3</a></li>
 				<!-- <li class="unavailable"><a href="">&hellip;</a></li>
 				<li><a href="">12</a></li>
 				<li><a href="">13</a></li> -->
 				<li class="arrow"><a href="index3.html">&raquo;</a></li>
 			</ul>
+			</div>
 		</div>
 		<!-- SIDEBAR -->
 		<div class="four columns">
@@ -221,7 +225,7 @@
 			<h6 class="sidebartitle">QUEM SOMOS</h6>
 			
 				<div class="teamwrap teambox">
-				<img src="images/quemsomos.png" alt="image01" class="responsiveslide"> 
+				<img src="{% static "ong/images/quemsomos.png" %}" alt="image01" class="responsiveslide"> 
 				<div class="mask">
 				<h6>Beatriz Vasconcelos</h6>
 				<h6>Pamela Motta</h6>
@@ -260,12 +264,12 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -274,7 +278,7 @@
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
 		<h5 class="subheader">Organização do Projeto</h5>
@@ -292,16 +296,16 @@
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>

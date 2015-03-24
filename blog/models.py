@@ -17,14 +17,14 @@ class Category(models.Model):
 	def __unicode__(self):
 		return self.name
 		#return u"%s - %d %d" %(self.name,self.views,self.likes)
-
+"""
 class Autores(models.Model):
 	nome = models.CharField(max_length=128)
 	sobre = models.TextField()
 
 	def __unicode__(self):
 		return self.nome
-
+"""
 class Page(models.Model):
 	category = models.ForeignKey(Category)
 	title = models.CharField(max_length=128, unique=True)
@@ -34,7 +34,7 @@ class Page(models.Model):
 	when = models.DateTimeField('data de criação', auto_now_add=True, db_index=True)
 	slugCategory = models.SlugField(unique=True,db_index=True)
 	body = models.TextField()
-	autor = models.ForeignKey(Autores)
+#	autor = models.ForeignKey(Autores )
 
 	def save(self, *args, **kwargs):
 		self.url = slugify(self.title)

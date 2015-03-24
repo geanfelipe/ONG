@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
 <title>ONG Retweet</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -21,7 +22,7 @@
 <div id="panel">
 	<div class="row">
 		<div class="twelve columns">
-			<img src="images/rt_logo.png" class="pics" alt="info">
+			<img src="{% static "ong/images/rt_logo.png" %}" class="pics" alt="info">
 			<div class="infotext">
 				O mundo não muda sozinho, façamos nossa parte para salvá-lo! Retweet essa ideia ^.^
 			</div>
@@ -37,7 +38,7 @@
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>			
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -45,7 +46,7 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Início</a>						
+					<a href="/">Início</a>						
 					</li>
 					
 					<li>
@@ -68,11 +69,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -115,7 +116,7 @@
 				<div class="boxblog">
 					<h5>OAB/RN une-se a CAU/RN para evento sustentável</h5>
 					<p class="small date">
-						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
+						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title="comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -124,7 +125,7 @@
 							</div>
 						</div>
 			<!-- image here -->
-						<img src="images/oab.png" alt="">
+						<img src="{% static "ong/images/oab.png" %}" alt="">
 					</div>
 					<p> Evento promovido pela OAB tem como tema "Como a gestão da água pode contribuir para o desenvolvimento sustentável do RN?”.
 					</p>
@@ -134,7 +135,7 @@
 				<div class="boxblog">
 					<h5>Declaração Universal dos Direitos da Água</h5>
 					<p class="small date">
-						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="images/comments.png" alt=""></span>
+						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title="comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -143,7 +144,7 @@
 							</div>
 						</div>
 			<!-- image here -->
-						<img src="images/direitosdaagua.jpg" alt="">
+						<img src="{% static "ong/images/direitosdaagua.jpg" %}" alt="">
 					</div>
 					<p> Veja só os 10 Direitos que a ONU garantiu para a nossa querida <b>Água</b>.
 					</p>
@@ -151,9 +152,9 @@
 			</div>
 			
 			<ul class="pagination">
-				<li class="arrow"><a href="index2.html">&laquo;</a></li>
-				<li><a href="index.html">1</a></li>
-				<li><a href="index2.html">2</a></li>
+				<li class="arrow"><a href="/page2/">&laquo;</a></li>
+				<li><a href="/">1</a></li>
+				<li><a href="/page2/">2</a></li>
 				<li class="current"><a href="">3</a></li>
 				<!-- <li class="unavailable"><a href="">&hellip;</a></li>
 				<li><a href="">12</a></li>
@@ -179,7 +180,7 @@
 			<h6 class="sidebartitle">QUEM SOMOS</h6>
 			
 				<div class="teamwrap teambox">
-				<img src="images/quemsomos.png" alt="image01" class="responsiveslide"> 
+				<img src="{% static "ong/images/quemsomos.png" %}" alt="image01" class="responsiveslide"> 
 				<div class="mask">
 				<h6>Beatriz Vasconcelos</h6>
 				<h6>Pamela Motta</h6>
@@ -218,12 +219,12 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -232,7 +233,7 @@
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
 		<h5 class="subheader">Organização do Projeto</h5>
@@ -249,16 +250,16 @@
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>
