@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Lugares Verdes</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
+<title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
    
 </head>
 <body>
@@ -20,7 +21,7 @@
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -28,11 +29,11 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Inicio</a>						
+					<a href="/">Inicio</a>						
 					</li>
 					
 					<li>
-					<a href="verdes.html">Lugares Verdes</a>
+					<a href="/lugares-verdes/">Lugares Verdes</a>
 					<ul>
 						<li><a href="eventos.html">Eventos</a></li>
 						</ul>
@@ -51,11 +52,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -126,8 +127,8 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 			</div>
 			<br/>
 			<ul class="pagination">
-				<li class="arrow"><a href="verdes.html">&laquo;</a></li>
-				<li><a href="verdes.html">1</a></li>
+				<li class="arrow"><a href="/lugares-verdes/">&laquo;</a></li>
+				<li><a href="/lugares-verdes/">1</a></li>
 				<li class="current"><a href="">2</a></li>
 				<!-- <li><a href="index3.html">3</a></li> -->
 				<li class="arrow unavailable"><a href="">&raquo;</a></li>
@@ -148,7 +149,7 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 								<a class="projectdetail" href="docs/artigo3.html"> Continuar lendo </a>
 							</div>
 						</div>			
-						<img src="images/samaritano2.jpg" alt="image01" class="responsiveslide"> 
+						<img src="{% static "ong/images/samaritano2.jpg" %}" alt="image01" class="responsiveslide"> 
 					</div>
 					 
 					
@@ -164,7 +165,7 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 								<a class="projectdetail" href="docs/artigo6.html"> Continuar lendo </a>
 							</div>
 						</div>			
-						<img src="images/app.jpg" alt="image01" class="responsiveslide"> 
+						<img src="{% static "ong/images/app.jpg" %}" alt="image01" class="responsiveslide"> 
 					</div>					
 				</ul>
 			</div>
@@ -189,12 +190,12 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -203,7 +204,7 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
 		<h5 class="subheader">Organização do Projeto</h5>
@@ -219,16 +220,16 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 </div>
 <!-- JAVASCRIPTS 
 ================================================== -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>

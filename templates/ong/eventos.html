@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Eventos</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
+<title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<!--<link rel="stylesheet" href="stylesheets/blog.css"> blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
 </head>
 <body>
 <!-- HEADER
@@ -17,7 +18,7 @@
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -25,13 +26,13 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Inicio</a>						
+					<a href="/">Inicio</a>						
 					</li>
 					
 					<li>
-					<a href="verdes.html">Lugares Verdes</a>
+					<a href="/lugares-verdes/">Lugares Verdes</a>
 						<ul>
-						<li><a href="eventos.html">Eventos</a></li>
+						<li><a href="/eventos/">Eventos</a></li>
 						</ul>
 					<li>
 					
@@ -48,11 +49,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -89,7 +90,7 @@
 						<a class="projectdetail" href="https://www.facebook.com/events/1404214923219631/" target="_blank"> Participe </a>
 					</div>
 				</div>
-				<img src="images/coco.jpg" class="threeimage" alt=""/>
+				<img src="{% static "ong/images/coco.jpg" %}" class="threeimage" alt=""/>
 			</div>
 		</div>
 		<div class="four columns threeportofolio category trains">
@@ -103,7 +104,7 @@
 						<a class="projectdetail" href="https://www.facebook.com/events/805964466157858/" target="_blank"> Participe </a>
 					</div>
 				</div>
-				<img src="images/oia.png" class="threeimage" alt=""/>
+				<img src="{% static "ong/images/oia.png" %}" class="threeimage" alt=""/>
 			</div>
 		</div>
 		<div class="four columns threeportofolio category trains">
@@ -117,7 +118,7 @@
 						<a class="projectdetail" href="https://www.facebook.com/events/906488642737311/" target="_blank"> Participe </a>
 					</div>
 				</div>
-				<img src="images/sebo.jpg" class="threeimage" alt=""/>
+				<img src="{% static "ong/images/sebo.jpg" %}" class="threeimage" alt=""/>
 			</div>
 		</div>		
 		<div class="four columns threeportofolio category trains">
@@ -131,7 +132,7 @@
 						<a class="projectdetail" href="https://www.facebook.com/events/1552917034990626/" target="_blank"> Participe </a>
 					</div>
 				</div>
-				<img src="images/ecopraça.jpg" class="threeimage" alt=""/>
+				<img src="{% static "ong/images/ecopraca.jpg" %}" class="threeimage" alt=""/>
 			</div>
 		</div>
 		<div class="four columns threeportofolio category trains">
@@ -145,7 +146,7 @@
 						<a class="projectdetail" href="https://www.facebook.com/pages/Dan%C3%A7ando-nas-Dunas/795606593825714?fref=ts" target="_blank"> Participe </a>
 					</div>
 				</div>
-				<img src="images/dunas.jpg" class="threeimage" alt=""/>
+				<img src="{% static "ong/images/dunas.jpg" %}" class="threeimage" alt=""/>
 			</div>
 		</div>
 		<div class="four columns threeportofolio category trains">
@@ -159,7 +160,7 @@
 						<a class="projectdetail" href="https://www.facebook.com/BicicletadaNatal?fref=ts" target="_blank"> Participe </a>
 					</div>
 				</div>
-				<img src="images/bike.jpg" class="threeimage" alt=""/>
+				<img src="{% static "ong/images/bike.jpg" %}" class="threeimage" alt=""/>
 			</div>
 		</div>
 	</div>
@@ -184,12 +185,12 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -198,7 +199,7 @@
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
 		<h5 class="subheader">Organização do Projeto</h5>
@@ -214,16 +215,16 @@
 </div>
 <!-- JAVASCRIPTS 
 ================================================== -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
-<meta charset="iso-881877"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>Lugares Verdes</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
+<title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">   
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
 </head>
 <body>
 <!-- HEADER
@@ -17,7 +18,7 @@
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -25,11 +26,11 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Inicio</a>						
+					<a href="/">Inicio</a>						
 					</li>
 					
 					<li>
-					<a href="verdes.html">Lugares Verdes</a>
+					<a href="/lugares-verdes/">Lugares Verdes</a>
 						<ul>
 						<li><a href="eventos.html">Eventos</a></li>
 						</ul>
@@ -38,8 +39,8 @@
 					<li> 
 					<a href="campanha.html">Campanhas</a>
 						<ul>
-						<li><a href="campanha1.html">Conheça mais</a></li>
-						<li><a href="campanha2.html">Faça sua campanha</a></li>
+						<li><a href="campanha1.html">ConheÃ§a mais</a></li>
+						<li><a href="campanha2.html">FaÃ§a sua campanha</a></li>
 						</ul>
 					</li>
 					
@@ -48,11 +49,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -86,7 +87,7 @@
 			<div class="dots blogdots">
 			</div>
 			<p align="justify">
-					O Parque das Dunas foi a primeira Unidade de Conservação Ambiental implantada no Estado do Rio Grande do Norte, criado em 1977. Tem 1.172 hectares de mata nativa, sendo parte integrante da Reserva da Biosfera da Mata Atlântica Brasileira. É considerado o segundo maior parque urbano do Brasil, superado apenas pela Floresta da Tijuca (RJ). O Parque das Dunas recebe 9 mil visitantes por mês.
+					O Parque das Dunas foi a primeira Unidade de ConservaÃ§Ã£o Ambiental implantada no Estado do Rio Grande do Norte, criado em 1977. Tem 1.172 hectares de mata nativa, sendo parte integrante da Reserva da Biosfera da Mata AtlÃ¢ntica Brasileira. Ã‰ considerado o segundo maior parque urbano do Brasil, superado apenas pela Floresta da Tijuca (RJ). O Parque das Dunas recebe 9 mil visitantes por mÃªs.
 			</P>
 			<a href="http://www.parquedasdunas.rn.gov.br/" class="saymore" target="_blank">Saiba mais</a>
 			<div class="hr">
@@ -98,10 +99,10 @@
 			<div class="dots blogdots">
 			</div>
 			<p align="justify">
-				"Seu paraiso no Pium!" O Vale Encantado é uma propriedade privada em Pium/RN, próximo a Praia de Cotovelo. Através da página do Facebook (no link aí embaixo), você entra em contato com os responsáveis do local e agendam o dia, horário e lugar para encontrar o guia. Do local marcado o guia o leva por um trilha, que é escolhida por você mesmo, até chegar ao Vale. 
+				"Seu paraiso no Pium!" O Vale Encantado Ã© uma propriedade privada em Pium/RN, prÃ³ximo a Praia de Cotovelo. AtravÃ©s da pÃ¡gina do Facebook (no link aÃ­ embaixo), vocÃª entra em contato com os responsÃ¡veis do local e agendam o dia, horÃ¡rio e lugar para encontrar o guia. Do local marcado o guia o leva por um trilha, que Ã© escolhida por vocÃª mesmo, atÃ© chegar ao Vale. 
 			</p>
 			<p align="justify">
-				Lá você encontra açaí orgânico - cultivado no próprio lugar, slacklines, passeio de caiaque, frescobol, tecidos aéreos, banho de rio e muito mais!
+				LÃ¡ vocÃª encontra aÃ§aÃ­ orgÃ¢nico - cultivado no prÃ³prio lugar, slacklines, passeio de caiaque, frescobol, tecidos aÃ©reos, banho de rio e muito mais!
 			</p>
 			<a href="https://www.facebook.com/valeencantadopium/timeline" class="saymore" target="_blank">Saiba mais</a>
 			<br/>
@@ -112,9 +113,9 @@
 			<div class="dots blogdots">
 			</div>
 			<p align="justify">
-				Amigos do Parque de Capim Macio é um projeto concebido pela arquiteta Viviane Teles a partir de conceitos de sustentabilidade. Criado com participação da comunidade. Espaço de uso misto para o desenvolvimento de atividades comunitárias e ações de educação ambiental, cultura e lazer.
+				Amigos do Parque de Capim Macio Ã© um projeto concebido pela arquiteta Viviane Teles a partir de conceitos de sustentabilidade. Criado com participaÃ§Ã£o da comunidade. EspaÃ§o de uso misto para o desenvolvimento de atividades comunitÃ¡rias e aÃ§Ãµes de educaÃ§Ã£o ambiental, cultura e lazer.
 			</P>
-			<p align="justify"> Com a única pretensão de salvar a última área verde do bairro de Capim Macio, a comunidade mostrou e comprovou que o poder da união e a força positiva do pensamento a levam onde quiserem.
+			<p align="justify"> Com a Ãºnica pretensÃ£o de salvar a Ãºltima Ã¡rea verde do bairro de Capim Macio, a comunidade mostrou e comprovou que o poder da uniÃ£o e a forÃ§a positiva do pensamento a levam onde quiserem.
 			</p>
 			<a href="http://www.parquedecapimmacio.org/" class="saymore" target="_blank">Saiba mais</a>
 			<div class="hr">
@@ -122,9 +123,9 @@
 			<ul class="pagination">
 				<li class="arrow unavailable"><a href="">&laquo;</a></li>
 				<li class="current"><a href="">1</a></li>
-				<li><a href="verdes2.html">2</a></li>
+				<li><a href="/lugares-verdes2/">2</a></li>
 				<!-- <li><a href="index3.html">3</a></li> -->
-				<li class="arrow"><a href="verdes2.html">&raquo;</a></li>
+				<li class="arrow"><a href="/lugares-verdes2/">&raquo;</a></li>
 			</ul>
 		</div>
 		<!-- SIDEBAR -->
@@ -134,7 +135,7 @@
 				<ul class="ei-slider-large">
 					<h6> Movimentos Ambientais aqui no estado</h6>
 					<li>
-					<p> O movimento “Salve os mangues” visita a zona de proteção ambiental natalense.</p>
+					<p> O movimento Salve os mangues visita a zona de proteÃ§Ã£o ambiental natalense.</p>
 					</li>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -142,13 +143,13 @@
 								<a class="projectdetail" href="docs/artigo7.html"> Continuar lendo </a>
 							</div>
 						</div>			
-						<img src="images/mangue.png" alt="image01" class="responsiveslide"> 
+						<img src="{% static "ong/images/mangue.png" %}" alt="image01" class="responsiveslide"> 
 					</div>				
 				</ul>	
 				<ul class="ei-slider-large">
 					<h6> Dicas para economizar energia</h6>
 					<li>
-					<p> Top 5 com dicas para reduzir a energia elétrica </p>
+					<p> Top 5 com dicas para reduzir a energia elÃ©trica </p>
 					</li>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
@@ -156,7 +157,7 @@
 								<a class="projectdetail" href="docs/artigo5.html"> Continuar lendo </a>
 							</div>
 						</div>			
-						<img src="images/top5.png" alt="image01" class="responsiveslide"> 
+						<img src="{% static "ong/images/top5.png" %}" alt="image01" class="responsiveslide"> 
 					</div>					
 				</ul>
 			</div>
@@ -181,12 +182,12 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -195,11 +196,11 @@
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
-		<h5 class="subheader">Organização do Projeto</h5>
-		<p> Professora Lúcia Costa </p>
+		<h5 class="subheader">OrganizaÃ§Ã£o do Projeto</h5>
+		<p> Professora LÃºcia Costa </p>
 		<p> Sociologia III </p>		
 	</footer>
 </div>
@@ -211,16 +212,16 @@
 </div>
 <!-- JAVASCRIPTS 
 ================================================== -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>

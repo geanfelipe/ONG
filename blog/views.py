@@ -118,4 +118,39 @@ def faca_sua_campanha(request):
 	#return render(request,'ong/facaSuaCampanha.html',{})
 
 def lugares_verdes(request):
-	return render(request,'ong/lugares_verdes.html',{})
+	return render(request,'ong/verdes.html',{})
+
+def lugares_verdes2(request):
+	return render(request,'ong/verdes2.html',{})
+
+def eventos(request):
+	return render(request,'ong/eventos.html',{})
+
+
+def artigo1(request):
+	return render(request,'ong/docs/artigo.html',{})
+
+def artigo2(request):
+	return render(request,'ong/docs/artigo2.html',{})
+"""	
+def artigo3(request):
+	return render(request,'ong/artigo.html',{})
+	
+def artigo4(request):
+	return render(request,'ong/artigo.html',{})
+
+def artigo5(request):
+	return render(request,'ong/artigo.html',{})
+
+def artigo6(request):
+	return render(request,'ong/artigo.html',{})
+
+def artigo7(request):
+	return render(request,'ong/artigo.html',{})
+
+def artigo8(request):
+	return render(request,'ong/artigo.html',{})
+
+def artigo9(request):
+	return render(request,'ong/artigo.html',{})
+"""
