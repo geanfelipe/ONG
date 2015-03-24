@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 {% load widget_tweaks %}
-
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>ONG Retweet</title>
+<title>Denuncie</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
 <link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
 <link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
@@ -18,29 +18,13 @@
   <![endif]-->    
 </head>
 <body>
-<!-- HIDDEN PANEL 
-================================================== -->
-<div id="panel">
-	<div class="row">
-		<div class="twelve columns">
-			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
-			<div class="infotext">
-				(-------- frase de impacto---------)
-			</div>
-		</div> 
-	</div>
-</div>
-<p class="slide">
-	<a href="#" class="btn-slide"></a>
-</p>
-
 <!-- HEADER
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
-			<div class="logo">
-				<a href="/"><h4>ONG Retweet</h4></a>
-			</div>
+			<div class="logo">								
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
+			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
 			<nav id="nav-wrap">
@@ -58,19 +42,19 @@
 					<li>
 					
 					<li> 
-					<a href="#">Campanhas</a>
+					<a href="campanha.html">Campanhas</a>
 						<ul>
-						<li><a href="/campanhas/">Conheça mais</a></li>
-						<li><a href="/faca-sua-campanha/">Faça sua campanha</a></li>
+						<li><a href="campanha1.html">Conheça mais</a></li>
+						<li><a href="campanha2.html">Faça sua campanha</a></li>
 						</ul>
 					</li>
 					
 					<li>
-					<a href="/ongs/">ONGs</a>
+					<a href="ongs.html">ONGs</a>
 					</li>
 					
 					<li>
-					<a href="/denuncie">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
@@ -87,20 +71,13 @@
 ================================================== -->
 <div id="subheader">
 	<div class="row">
-		<div class="eight columns">
-			<p class="bread leftalign">
-				<!-- You are here: <a href="index.html"> Home</a> / <a href="blogpage2.html">Blog second style</a> -->
+		<div class="twelve columns">
+			<p class="left">
+				 FAÇA SUA DENÚNCIA JÁ
 			</p>
-		</div>
-		<div class="four columns">
-			<div class="row collapse">
-				<div class="ten mobile-three columns">
-					<input type="text" class="nomargin" placeholder="Pesquisar ...">
-				</div>
-				<div class="two mobile-one columns">
-					<a href="#" class="postfix button expand">Ir</a>
-				</div>
-			</div>
+			<p class="right">
+				Nos ajude a cuidar da nossa natureza!
+			</p>
 		</div>
 	</div>
 </div>
@@ -108,6 +85,7 @@
 </div>
 <!-- CONTENT 
 ================================================== -->
+
 <div class="row">
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
@@ -121,26 +99,21 @@
 				<form method="post" action="" id="contactform">
 				<div class="form">
 				    {% csrf_token %}
-				    <div class="six columns noleftmargin">
 					{{ title.label }}
-					{{ title }}
+					{{ title | attr:"placeholder:Dê um título a sua Denúncia"}}
 					{{ title.errors }}
-					</div>
 
-					<div class="six columns">
 					{{ email.label }}
-					{{ email }}
+					{{ email | attr:"placeholder:Seu e-mail" }}
 					{{ email.errors }}
-					</div>
 
 					{{ text.label }}
-					{{ text }}
+					{{ text | attr:"placeholder:Deixe sua Denúncia Aqui" }}
 					{{ text.errors }}
 
 					{{ category.label }}
-					{{ category }}
+					{{ category | attr:"placeholder:Do que se trata? Resume em uma palavra"}}
 					{{ category.errors }}
-					
 					<input type="submit" id="submit" class="readmore" value="Enviar">
 				</div>
 				</form>			
@@ -163,26 +136,27 @@
 	<div class="four columns">
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
-			<a href="http://www.facebook.com">
-			<img src="{% static "ong/images/socialpack/facebooka.png" %}" /></a>
+			<a href="https://www.facebook.com/ongretweet" target="_blank">
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
+			</a>			
 		</div>
+		<div class="social facebook">
+			<a href="https://twitter.com/ongretweet" target="_blank">
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
+			</a>			
+		</div>
+		<h5 class="subheader">ONG Retweet</h5>
 	</div>
 	<div class="four columns">
 	<h1>APOIO</h1>
 		
 		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhbfjhvfdsjhvbs </p>
+		<h5 class="subheader">Organização do Projeto</h5>
+		<p> Professora Lúcia Costa </p>
+		<p> Sociologia III </p>		
 	</footer>
 </div>
 <div class="copyright">
@@ -205,5 +179,6 @@
 <script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
 <script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
 <script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+<script src="{% static "ong/javascripts/formvalidation.js" %}"></script>
 </body>
 </html>

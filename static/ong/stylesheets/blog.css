@@ -1,4 +1,4 @@
-.boxblog {border:1px solid #ddd; padding:5px 10px;margin-bottom:20px;}
+.boxblog {border:1px solid #ddd; padding:15px 25px;margin-bottom:20px;}
 .date {border-bottom:1px dashed #ddd;padding-bottom:10px;font-family:BitterItalic;}
 .continue {font-family:DroidSansBold;margin-top:-5px;display:inline;}
 .avatar{ margin-right:15px; float: left; background: #fff; width: 50px; height: 50px; padding: 5px; border: 1px solid #999; border-radius: 50%; box-shadow: 0px 1px 1px 1px #bbb;}
@@ -7,7 +7,7 @@
 a.tags, .tags a {color:#fff;}
 .tags:hover {background:#444;}
 .sidebartitle {margin-bottom:20px;border-bottom:1px dashed #ccc;padding-bottom:10px;}
-.thumb {width:80px; height:70px;border:1px solid #ccc; padding:2px;float:left;margin-right:10px; margin-bottom:1px; margin-top:1px;}
+.thumb {width:280px; height:200px;border:1px solid #ccc; padding:2px;float:left;margin-right:10px; margin-bottom:1px; margin-top:1px;}
 .circledate {color:#fff;background: url(../images/blackcircle.png) no-repeat; width:100px; height:100px; padding:2px;float:left;margin-right:10px; margin-bottom:1px; margin-top:1px;}
 .textcircle {margin-left:-6px;margin-top:20px;text-align:center;font-family:BitterItalic;color:#ddd;font-size:13px;}
 .day {margin-bottom:10px;}

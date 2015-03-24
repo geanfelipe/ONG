@@ -1,64 +1,30 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-{% load widget_tweaks %}
 
-<html  class="no-js" lang="en">
+<html class="no-js" lang="en">
 <head>
-<!--<meta charset="utf-8"/>-->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>ONG Retweet</title>
+<title>Contato</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-
 <link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
 <link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
 <link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
 <link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
-
-<script>
-function limparCampos() {
-if(document.getElementById('id_nome').value!="") {
-document.getElementById('id_nome').clear="";
-document.getElementById('id_email').clear="";
-document.getElementById('id_mensagem').clear="";
-}
-}
-function verificarEnvio() {
-
-}
-}
-
-</script>
-
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->    
 </head>
 <body>
-<!-- HIDDEN PANEL 
-================================================== -->
-<div id="panel">
-	<div class="row">
-		<div class="twelve columns">
-			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
-			<div class="infotext">
-				(-------- frase de impacto---------)
-			</div>
-		</div> 
-	</div>
-</div>
-<p class="slide">
-	<a href="#" class="btn-slide"></a>
-</p>
-
 <!-- HEADER
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
-			<div class="logo">
-				<a href="/"><h4>ONG Retweet</h4></a>
-			</div>
+			<div class="logo">								
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
+			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
 			<nav id="nav-wrap">
@@ -76,10 +42,10 @@ function verificarEnvio() {
 					<li>
 					
 					<li> 
-					<a href="#">Campanhas</a>
+					<a href="campanha.html">Campanhas</a>
 						<ul>
-						<li><a href="campanhas/">Conheça mais</a></li>
-						<li><a href="faca-sua-campanha/">Faça sua campanha</a></li>
+						<li><a href="campanha1.html">Conheça mais</a></li>
+						<li><a href="campanha2.html">Faça sua campanha</a></li>
 						</ul>
 					</li>
 					
@@ -88,11 +54,11 @@ function verificarEnvio() {
 					</li>
 					
 					<li>
-					<a href="/denuncie">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="/contato">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -124,33 +90,25 @@ function verificarEnvio() {
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
 		<div class="wrapcontact">
-			<h5>ENVIE SUA MENSAGEM</h5><br>
+			<h5>ENVIE SUA MENSAGEM</h5>
 			<div class="done">
 				<div class="alert-box success">
 				 Sua mensagem foi enviada! <a href="" class="close">x</a>
 				</div>
 			</div>			
-				<form method="post" action="" id="contactform">
+				<form method="post" action="contact.php" id="contactform">
 				<div class="form">
+				    
 					
-					
-
-				
-					<!--{% for fields in form %}
-						{{ fields.label }}
-						{{ fields.errors }}
-						{{ fields |attr:"rows:15"|attr:"cols:30"}}
-					{% endfor %}-->
-					
-
-				    <div class="six columns noleftmargin">
 				    {% csrf_token %}
+					<div class="six columns noleftmargin">
+				    
 					{{ nome.label }}
 					{{ nome }}
 					{{ nome.errors }}
 					</div>
 
-					<div class="six columns">
+					<div class="six columns ">
 					{{ email.label }}
 					{{ email }}
 					{{ email.errors }}
@@ -159,10 +117,10 @@ function verificarEnvio() {
 					{{ mensagem.label }}
 					{{ mensagem }}
 					{{ mensagem.errors }}
-
-					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="alert('Mensagem enviada com sucesso!')">
+				    
+					<input type="submit" id="submit" class="readmore" value="Enviar">
+				</div>
 				</form>			
-			</div>
 		</div>
 	</div>
 												
@@ -182,26 +140,27 @@ function verificarEnvio() {
 	<div class="four columns">
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
-			<a href="http://www.facebook.com">
-			<img src="{% static "ong/images/socialpack/facebooka.png" %}" /></a>
+			<a href="https://www.facebook.com/ongretweet" target="_blank">
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
+			</a>			
 		</div>
+		<div class="social facebook">
+			<a href="https://twitter.com/ongretweet" target="_blank">
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
+			</a>			
+		</div>
+		<h5 class="subheader">ONG Retweet</h5>
 	</div>
 	<div class="four columns">
 	<h1>APOIO</h1>
 		
 		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhbfjhvfdsjhvbs </p>
+		<h5 class="subheader">Organização do Projeto</h5>
+		<p> Professora Lúcia Costa </p>
+		<p> Sociologia III </p>		
 	</footer>
 </div>
 <div class="copyright">
@@ -210,6 +169,9 @@ function verificarEnvio() {
 			 &copy;<span class="small"> Copyright 2015 ONG Retweet</span>
 		</div>		
 </div>
+<!-- JAVASCRIPTS 
+================================================== -->
+<!-- Javascript files placed here for faster loading -->
 <script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
 <script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
 <script src="{% static "ong/javascripts/app.js" %}"></script>
@@ -221,5 +183,6 @@ function verificarEnvio() {
 <script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
 <script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
 <script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
+<script src="{% static "ong/javascripts/formvalidation.js" %}"></script>
 </body>
 </html>

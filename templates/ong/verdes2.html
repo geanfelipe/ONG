@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
 <title>Lugares Verdes</title>
+<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
 <!-- Included CSS Files-->
 <link rel="stylesheet" href="stylesheets/style.css">
 <link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
@@ -12,29 +13,15 @@
    
 </head>
 <body>
-<!-- HIDDEN PANEL 
-================================================== -->
-<div id="panel">
-	<div class="row">
-		<div class="twelve columns">
-			<img src="images/info.png" class="pics" alt="info">
-			<div class="infotext">
-				(-------- frase de impacto---------)
-			</div>
-		</div> 
-	</div>
-</div>
-<p class="slide">
-	<a href="#" class="btn-slide"></a>
-</p>
+
 
 <!-- HEADER
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
-			<div class="logo">
-				<a href="index.html"><h4>ONG Retweet</h4></a>
-			</div>
+			<div class="logo">								
+				<a href="index.html"> <img src="images/logotop.png"> </a>
+			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
 			<nav id="nav-wrap">
@@ -52,7 +39,7 @@
 					<li>
 					
 					<li> 
-					<a href="#">Campanhas</a>
+					<a href="campanha.html">Campanhas</a>
 						<ul>
 						<li><a href="campanha1.html">Conheça mais</a></li>
 						<li><a href="campanha2.html">Faça sua campanha</a></li>
@@ -93,18 +80,33 @@
 <!-- CONTENT 
 ================================================== -->
 <div class="row">
-	<div class="twelve columns noleftmargin">
-	    <!-- MAIN CONTENT -->
-		<div class="eight columns noleftmargin">
+	<div class="eight columns noleftmargin">
+			<div class="circledate">
+				<div class="textcircle"></div>
+			</div>
+			<h4>Parque da Cidade</h4>
+			<div class="dots blogdots">
+			</div>
+			<p>
+				O Parque da Cidade foi projetado pelo arquiteto Oscar Niemayer com a colaboração de Ana Niemayer e Jair Varela. O macro zoneamento proposto no Plano Diretor de Natal estabeleceu as Zonas de Proteção Ambiental, as quais foram previstas para viabilizar a proteção dos aspectos naturais e culturais da cidade. O Parquepode desempenhar a função de espaço destinado ao lazer ecológico, cultural e equipamento estratégico de promoção da educação ambiental.
+			</p>
+			<p>A importância do Parque se dá por sua relevância ecológica, sendo responsável pela manutenção dos processos ecológicos e pela proteção integral da área que é uma das principais fontes de recarga do aqüífero de Natal (cerca de 70% do abastecimento de água da cidade provém do subsolo), considerado um dos poucos reservatórios naturais ainda não contaminados em Natal.
+			</p> <a href="http://www.natal.rn.gov.br/parquedacidade/" class="saymore" target="_blank">Saiba mais</a>
+			<br/>
+
 			<div class="circledate"></div>
 			<h4>Cajueiro de Pirangi</h4>
 			</p>
 			<div class="dots blogdots">
 			</div>
 			<p>
-					O maior cajueiro do mundo!!
+				É o maior cajueiro do mundo! Localizado na praia de Pirangi, em Parnamirim, o cajueiro cobre uma área de aproximadamente 8500m². 
+				Por safra, ele produz entre 70 e 80 mil cajus.
 			</P>
-			<a href="http://www.parquedasdunas.rn.gov.br/" class="saymore">Saiba mais</a>
+			<p> O cajueiro teria sido plantado em 1888 e, graças à conjunção de duas anomalias genéticas, tornou-se o maior do mundo. Para entender melhor a história deste patrimônio potiguar
+			e conhecer sua grande beleza, visite esse maravilhoso ponto turístico!
+			</p>
+			<a href="https://www.facebook.com/pages/Maior-Cajueiro-do-Mundo/1410883479172276?rf=190187714359503" class="saymore" target="_blank">Saiba mais</a>
 			<div class="hr">
 			</div>
 			<div class="circledate">
@@ -119,7 +121,7 @@ O macro zoneamento proposto no Plano Diretor de Natal estabeleceu as Zonas de Pr
 pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e equipamento estratégico de promoção da educação ambiental.
 			</p>
 			<p>A importância do Parque se dá por sua relevância ecológica, sendo responsável pela manutenção dos processos ecológicos e pela proteção integral da área que é uma das principais fontes de recarga do aqüífero de Natal (cerca de 70% do abastecimento de água da cidade provém do subsolo), considerado um dos poucos reservatórios naturais ainda não contaminados em Natal.
-			</p> <a href="http://www.natal.rn.gov.br/parquedacidade/" class="saymore">Saiba mais</a>
+			</p> <a href="http://www.natal.rn.gov.br/parquedacidade/" class="saymore" target="_blank">Saiba mais</a>
 			<div class="hr">
 			</div>
 			<br/>
@@ -127,67 +129,45 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 				<li class="arrow"><a href="verdes.html">&laquo;</a></li>
 				<li><a href="verdes.html">1</a></li>
 				<li class="current"><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li class="unavailable"><a href="">&hellip;</a></li>
-				<li><a href="">12</a></li>
-				<li><a href="">13</a></li>
-				<li class="arrow"><a href="">&raquo;</a></li>
+				<!-- <li><a href="index3.html">3</a></li> -->
+				<li class="arrow unavailable"><a href="">&raquo;</a></li>
 			</ul>
 		</div>
 		<!-- SIDEBAR -->
 		<div class="four columns">
 			<h6 class="sidebartitle">VEJA AGORA</h6>
-			<!-- <div class="avatar">
-				<img src="images/temp/author1.png" alt="">
+			<div id="ei-slider" class="ei-slider">
+				<ul class="ei-slider-large">
+					<h6> Solidariedade e Sustentabilidade</h6>
+					<li>
+					<p> Associação Beneficente também ajuda o Meio Ambiente.</p>
+					</li>
+					<div class="portofoliothumb">
+						<div class="portofoliothumboverlay">
+							<div class="inner2">
+								<a class="projectdetail" href="docs/artigo3.html"> Continuar lendo </a>
+							</div>
+						</div>			
+						<img src="images/samaritano2.jpg" alt="image01" class="responsiveslide"> 
+					</div>
+					 
+					
+				</ul>	
+				<ul class="ei-slider-large">
+					<h6> Aplicativos Sustentáveis </h6>
+					<li>
+					<p> Veja os novos aplicativos que aliam à tecnologia o ambientalismo e a sustentabilidade. </p>
+					</li>
+					<div class="portofoliothumb">
+						<div class="portofoliothumboverlay">
+							<div class="inner2">
+								<a class="projectdetail" href="docs/artigo6.html"> Continuar lendo </a>
+							</div>
+						</div>			
+						<img src="images/app.jpg" alt="image01" class="responsiveslide"> 
+					</div>					
+				</ul>
 			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p>
-			<div class="avatar">
-				<img src="images/temp/author2.png" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p>
-			<div class="avatar">
-				<img src="images/temp/author3.png" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p>
-			<br class="clear"/>
-			<h6 class="sidebartitle">POPULAR TAGS</h6>
-			<a href="#" class="tags">Photography</a>
-			<a href="#" class="tags">Vintage</a>
-			<a href="#" class="tags">Nature</a>
-			<a href="#" class="tags">Design</a>
-			<a href="#" class="tags">Printing</a>
-			<a href="#" class="tags">Contemporary</a>
-			<a href="#" class="tags">Classic</a>
-			<a href="#" class="tags">Elegant</a>
-			<a href="#" class="tags">Graphics</a>
-			<br class="clear"/>
-			<br/><br/>
-			<h6 class="sidebartitle">POPULAR POSTS</h6>
-			<p>
-				7 Oct 2013
-			</p>
-			<p>
-				Many pieces were proposed, but none seemed suitable, because each one wished to play a good and suitable part ...
-			</p>
-			<p>
-				6 Sept 2013
-			</p>
-			<p>
-				It was ready for production, when through accident we were disappointed about securing the private theatre on ...
-			</p>
-			<p>
-				4 Aug 2013
-			</p>
-			<p>
-				The over-kind praise which it won encouraged me to have the play printed. I decided, as I could see no other prospects...
-			</p>   -->
 		</div>
 	</div>
 </div>
@@ -208,27 +188,27 @@ pode desempenhar a função de espaço destinado ao lazer ecológico, cultural e
 	<div class="four columns">
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
-			<a href="http://www.facebook.com">
+			<a href="https://www.facebook.com/ongretweet" target="_blank">
 			<img src="images/socialpack/facebooka.png"/>
-			</a>
+			</a>			
 		</div>
+		<div class="social facebook">
+			<a href="https://twitter.com/ongretweet" target="_blank">
+			<img src="images/socialpack/twitter.png"/>
+			</a>			
+		</div>
+		<h5 class="subheader">ONG Retweet</h5>
 	</div>
 	<div class="four columns">
 	<h1>APOIO</h1>
 		
 		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>				
+			<img src="images/logo_if.png">				
 	</div>
 	<div class="four columns">
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhabfjhvfdsjhvbs </p>
+		<h5 class="subheader">Organização do Projeto</h5>
+		<p> Professora Lúcia Costa </p>
+		<p> Sociologia III </p>		
 	</footer>
 </div>
 <div class="copyright">

@@ -24,9 +24,9 @@ class PageForms(forms.ModelForm):
        
 
 class DenunciaForm(forms.ModelForm):
-	email = forms.EmailField(label="Seu email")
-	title = forms.CharField(max_length = 100, label= "Título da Denúncia")
-	text= forms.CharField(widget=forms.Textarea(),label = "Digite Sua Denúncia")
+	email = forms.EmailField(label="Email")
+	title = forms.CharField(max_length = 100, label= "Título")
+	text= forms.CharField(widget=forms.Textarea(),label = "Denúncia")
 	Category = forms.CharField(max_length = 100, label  = "Tipo de sua Denúncia")
 	class Meta:
 		model = Denuncias

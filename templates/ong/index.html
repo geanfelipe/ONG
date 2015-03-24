@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-
-<html class="no-js" lang="en">
+<html class="no-js" lang="pt-br">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
 <title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
 <link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
 <link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
@@ -22,9 +22,9 @@
 <div id="panel">
 	<div class="row">
 		<div class="twelve columns">
-			<img src="{% static "ong/images/info.png" %}" class="pics" alt="info">
+			<img src="{% static "ong/images/rt_logo.png" %}" class="pics" alt="info">
 			<div class="infotext">
-				(-------- frase de impacto---------)
+				O mundo não muda sozinho, façamos nossa parte para salvá-lo! Retweet essa ideia ^.^
 			</div>
 		</div> 
 	</div>
@@ -37,9 +37,9 @@
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
-			<div class="logo">
-				<a href="/"><h4>ONG Retweet</h4></a>
-			</div>
+			<div class="logo">								
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
+			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
 			<nav id="nav-wrap">
@@ -50,31 +50,32 @@
 					</li>
 					
 					<li>
-					<a href="lugaresverdes/">Lugares Verdes</a>
+					<a href="verdes.html">Lugares Verdes</a>
 						<ul>
 						<li><a href="eventos.html">Eventos</a></li>
 						</ul>
 					<li>
 					
 					<li> 
-					<a href="#">Campanhas</a>
+					<a href="campanha.html">Campanhas</a>
 						<ul>
-						<li><a href="campanhas/">Conheça mais</a></li>
-						<li><a href="faca-sua-campanha/">Faça sua campanha</a></li>
+						<li><a href="campanha1.html">Conheça mais</a></li>
+						<li><a href="campanha2.html">Faça sua campanha</a></li>
 						</ul>
 					</li>
 					
 					<li>
-					<a href="/ongs">ONGs</a>
+					<a href="ongs.html">ONGs</a>
 					</li>
 					
 					<li>
-					<a href="/denuncie">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato/">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
+					
 				</ul>
 				</nav>
 		</div>	
@@ -110,166 +111,134 @@
 	<div class="twelve columns noleftmargin">
 	    <!-- MAIN CONTENT -->
 		<div class="eight columns noleftmargin">
-
-			{% if pages %}
-				{% for page in pages %}
-
-				<div class="six columns">
-					<div class="boxblog">
-						<h5>{{page.title}}</h5>
-						<p class="small date">
-							Postado em : {{page.when}}<span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
-						</p>
-						<p>
-							<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb">{{page.description}}
-						</p>
-						<p>
-
-							<a href="/{{ page.slugCategory }}/{{ page.url }}" class="small continue">Continue lendo</a>
-						</p>
+			<div class="six columns">
+				<div class="boxblog">
+					<h5>Dia Mundial da Água</h5>
+					<p class="small date">
+						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title=" comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+					</p>
+					<div class="portofoliothumb">
+						<div class="portofoliothumboverlay">
+							<div class="inner">
+								<a class="projectdetail" href="docs/artigo.html"> Continuar lendo </a>
+							</div>
+						</div>
+			<!-- image here -->
+						<img src="{% static "ong/images/agua.jpg" %}" alt="">
 					</div>
+					<p align="justify"> Será que é só neste dia que devemos nos preocupar com a água do nosso planeta? Veja como surgiu o Dia Mundial da Água e qual a importância dessa substância nas nossas vidas.  
+					</p>
+					
 				</div>
-
-				{% endfor %}
-
-			{% else %}
-				<strong>Ainda não ná nenhum artigo no blog</strong>
-			{% endif %}
-
-
-			<!--
-			{% if request.user != 'AnonymousUser' %}
-			<h3>Olá {{request.user}} </h3>
-			{% else %}
-			<h3>  Inscreva-se </h3>
-			{% endif %} -->
-			
-			<!--
+			</div>
 			<div class="six columns">
 				<div class="boxblog">
-					<h5>Casas sustentáveis</h5>
+					<h5>Dia Mundial das Florestas</h5>
 					<p class="small date">
-						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title=" comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
-					<p>
-						<img src="{% static "ong/images/temp/folio3.jpg" %}" alt="" class="thumb"> Também conhecidas como casas ecológicas, as casas sustentáveis são aquelas projetadas e construídas de maneira a respeitar o meio ambiente, seguindo os princípios da sustentabilidade ambiental e garantindo...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
+					<div class="portofoliothumb">
+						<div class="portofoliothumboverlay">
+							<div class="inner">
+								<a class="projectdetail" href="docs/artigo2.html"> Continuar lendo </a>
+							</div>
+						</div>
+			<!-- image here -->
+						<img src="{% static "ong/images/florestas.jpg" %}" alt="">
+					</div>
+					<p align="justify"> As consequências de viver sem elas são muitas: agravamento das mudanças climáticas, perda da biodiversidade, piora na qualidade de vida nas cidades...
+					E lembre-se - não só hoje, mas todos os dias -  que isso tudo afeta diretamente a sua existência nesse mundo!
 					</p>
 				</div>
 			</div>
 			<div class="six columns">
 				<div class="boxblog">
-					<h5>Lady Speedway</h5>
+					<h5>Solidariedade e Sustentabilidade</h5>
 					<p class="small date">
-						Posted on: 2 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title=" comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
-					<p>
-						<img src="{% static "ong/images/temp/folio4.jpg" %}" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
+					<div class="portofoliothumb">
+						<div class="portofoliothumboverlay">
+							<div class="inner">
+								<a class="projectdetail" href="docs/artigo3.html"> Continuar lendo </a>
+							</div>
+						</div>
+			<!-- image here -->
+						<img src="{% static "ong/images/samaritano2.jpg" %}" alt="">
+					</div>
+					<p align="justify"> A Associação Beneficente do Bom Samaritano além de apoiar pessoas necessitadas, da cidade de Parnamirim, contribui com cuidado do meio ambiente, 
+					realizando atividades com material reciclável.
 					</p>
 				</div>
 			</div>
 			<div class="six columns">
 				<div class="boxblog">
-					<h5>Hotel Biscuit</h5>
+					<h5>Áreas Impróprias Para Banho</h5>
 					<p class="small date">
-						Posted on: 3 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
+						Posted on: 6 Feb 2015 <span class="has-tip tip-top" data-width="90" title=" comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
 					</p>
-					<p>
-						<img src="{% static "ong/images/temp/folio6.jpg" %}" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
+					<div class="portofoliothumb">
+						<div class="portofoliothumboverlay">
+							<div class="inner">
+								<a class="projectdetail" href="docs/artigo4.html"> Continuar lendo </a>
+							</div>
+						</div>
+			<!-- image here -->
+						<img src="{% static "ong/images/riopium.jpg" %}" alt="">
+					</div>
+					<p align="justify"> Último relatório de balnealidade das praias do Rio Grande do Norte indicam três áreas da Grande Natal que estão impróprias para o banho.
 					</p>
 				</div>
 			</div>
-			<div class="six columns">
-				<div class="boxblog">
-					<h5>Private Theater</h5>
-					<p class="small date">
-						Posted on: 2 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
-					</p>
-					<p>
-						<img src="{% static "ong/images/temp/folio3.jpg" %}" alt="" class="thumb">"ARE you comin' to the dawncin', Lady Speedway?" asked the American in his best transatlantic liner accent. "Most decidedly not!" Mind you, this answer from Lady Speedway meant red lights ahead. At the Hotel Biscuit ...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
-					</p>
-				</div>
-			</div>
-			<div class="six columns">
-				<div class="boxblog">
-					<h5>Transatlantic</h5>
-					<p class="small date">
-						Posted on: 3 Oct 2013 <span class="has-tip tip-top" data-width="90" title="6 comments"><img src="{% static "ong/images/comments.png" %}" alt=""></span>
-					</p>
-					<p>
-						<img src="{% static "ong/images/temp/nivo3.jpg" %}" alt="" class="thumb"> She was the Field Marshal of the Front Porch Knitting Needle Hussars, nicknamed "Hussies." Her approbation was olive oil; her discountenance prickly heat. "Of course," she added, "while recognizing that expatiation does not include brevity ...
-					</p>
-					<p>
-						<a href="#" class="small continue">Continue reading</a>
-					</p>
-				</div>
-			</div>
-		-->
 			<ul class="pagination">
-	<!--			<li class="arrow unavailable"><a href="">&laquo;</a></li>
+				<li class="arrow unavailable"><a href="">&laquo;</a></li>
 				<li class="current"><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li class="unavailable"><a href="">&hellip;</a></li>
+				<li><a href="index2.html">2</a></li>
+				<li><a href="index3.html">3</a></li>
+				<!-- <li class="unavailable"><a href="">&hellip;</a></li>
 				<li><a href="">12</a></li>
-				<li><a href="">13</a></li>
-				<li class="arrow"><a href="">&raquo;</a></li> -->
+				<li><a href="">13</a></li> -->
+				<li class="arrow"><a href="index2.html">&raquo;</a></li>
 			</ul>
 		</div>
 		<!-- SIDEBAR -->
 		<div class="four columns">
 			<h6 class="sidebartitle">SOBRE </h6>
-			<p>
-				7 Oct 2013
-			</p>
-			<p>
-				Many pieces were proposed, but none seemed suitable, because each one wished to play a good and suitable part ...
-			</p>
-			<p>
-				6 Sept 2013
-			</p>
-			<p>
-				It was ready for production, when through accident we were disappointed about securing the private theatre on ...
-			</p>
-			<p>
-				4 Aug 2013
-			</p>
-			<p>
-				The over-kind praise which it won encouraged me to have the play printed. I decided, as I could see no other prospects...
+			<p align="justify">
+				&nbsp &nbsp Nosso projeto é fruto de um protótipo, na disciplina de Projeto Integrador, do IFRN Campus Parnamirim, 
+				que está sendo realizado entre estudantes e professores em conjunto. Ele nasceu no início do ano de 2015, 
+				e os idealizadores pretendem estendê-lo a mais tempo. <br/>
+				&nbsp &nbsp O projeto tem como finalidade trabalhar com informações 
+				que tenham relação com a nossa flora e fauna, o ambiente ao nosso redor,os cuidados que devemos prestar para 
+				com o meio em que vivemos, e possíveis problemas que nos deparamos quando não tomamos este devido cuidado. <br/>
+				&nbsp &nbsp Aqui, você poderá encontrar também, informações sobre a nossa Ong e os trabalhos que estamos realizando, como por 
+				exemplo, ações que estamos fazendo em prol do meio ambiente, dicas de sustentabilidade, e muito mais.
 			</p>
 			<br class="clear"/>
 			<br/>
 			<h6 class="sidebartitle">QUEM SOMOS</h6>
-			<div class="avatar">
-				<img src="{% static "ong/images/temp/author1.png" %}" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p> 
-			<div class="avatar">
-				<img src="{% static "ong/images/temp/author2.png" %}" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p>
-			<div class="avatar">
-				<img src="{% static "ong/images/temp/author3.png" %}" alt="">
-			</div>
-			<p>
-				 Many pieces were proposed, but none seemed suitable, because each one wished to play a good ...
-			</p>
+			
+				<div class="teamwrap teambox">
+				<img src="{% static "ong/images/quemsomos.png" %}" alt="image01" class="responsiveslide"> 
+				<div class="mask">
+				<h6>Beatriz Vasconcelos</h6>
+				<h6>Pamela Motta</h6>
+				<h6>Cinthia Katiane</h6>
+				<h6>Gean Felipe</h6>
+				<h6>Andrezza Luiza</h6>			
+				</div>				
+				</div>
+				
+				<p align="justify"> 
+				&nbsp &nbsp Para começo de conversa, somos estudantes do Instituto Federal de Educação, Ciência e Tecnologia do 
+				Rio Grande do Norte, do Campus Parnamirim, localizado ao lado da capital do estado, Natal. <br/>
+				&nbsp &nbsp O site que você está acessando, é resultado do protótipo que criamos, na disciplina Projeto Integrador, 
+				ministrada no 3ºano do ensino médio integrado no Instituto,e tem como base, temas que tivessem relação à nossa 
+				natureza e meio ambiente. De início, nosso objetivo é procurar concientizar as pessoas que cuidar do meio ambiente 
+				é importante,que se não for devidamente cuidado, sofreremos as consequências em um momento bem próximo. <br/>
+				&nbsp &nbsp Por enquanto, nossas realizações fazem parte de um pequeno projeto,mas pretendemos levar o trabalho a 
+				frente, e trazer mais informações ambientais às pessoas. Agora, se ficou interessado, sobe na prancha e vem navegar 
+				com a gente!</p>
 		</div>
 	</div>
 </div>
@@ -288,26 +257,27 @@
 	<div class="four columns">
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
-			<a href="http://www.facebook.com">
-			<img src="{% static "ong/images/socialpack/facebooka.png" %}" /></a>
+			<a href="https://www.facebook.com/ongretweet" target="_blank">
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
+			</a>			
 		</div>
+		<div class="social facebook">
+			<a href="https://twitter.com/ongretweet" target="_blank">
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
+			</a>			
+		</div>
+		<h5 class="subheader">ONG Retweet</h5>
 	</div>
 	<div class="four columns">
 	<h1>APOIO</h1>
 		
 		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>
-		
-		
-			<p> jhabfjhvfdsjhvbs </p>				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhabfjhvfdsjhvbs </p>
-		<p> jhbfjhvfdsjhvbs </p>
+		<h5 class="subheader">Organização do Projeto</h5>
+		<p> Professora Lúcia Costa </p>
+		<p> Sociologia III </p>		
 	</footer>
 </div>
 <div class="copyright">
