@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load widget_tweaks %}
 <html class="no-js" lang="pt-br">
 <head>
 <meta charset="utf-8"/>
@@ -82,6 +83,24 @@
 </div>
 <div class="clear">
 </div>
+
+<!-- SUBHEADER
+================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p class="left">
+				 CRIAR CAMPANHA
+			</p>
+			<p class="right">
+			
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+
 <!-- CONTENT 
 ================================================== -->
 
@@ -101,14 +120,14 @@
 					
 
 					{{ email.label }}
-					{{ email | attr:"placeholder:Seu e-mail*" }}
+					{{ email | attr:"placeholder:Seu e-mail para contato*" }}
 					{{ email.errors }}
 
 					{{ mensagem.label }}
-					{{ mensagem | attr:"placeholder:Deixe sua mensagem para nós*" }}
+					{{ mensagem | attr:"placeholder:Fale um pouco sobre sua campanha e motivações*" }}
 					{{ mensagem.errors }}
-				  
-					<input type="submit" id="submit" class="readmore" value="Enviar" onclick="mensagem()">
+
+					<input type="submit" id="" class="readmore" value="Enviar" onclick="mensagem()">
 				</div>
 				</form>			
 		</div>

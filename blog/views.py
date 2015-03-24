@@ -108,6 +108,9 @@ def contato (request):
 def ongs(request):
 	return render(request, 'ong/ongs.html',{})
 
+def ongs2(request):
+	return render(request, 'ong/ongs2.html',{})
+
 def campanhas(request):
 	return render(request,'ong/campanhas.html',{})
 
@@ -128,7 +131,7 @@ def faca_sua_campanha(request):
 	context_dict['email'] = form['email']
 	context_dict['mensagem'] = form['mensagem']
 
-	return render(request,'ong/campanha2.html',{})
+	return render(request,'ong/campanha2.html',context_dict)
 
 def lugares_verdes(request):
 	return render(request,'ong/verdes.html',{})

@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="pt-br">
 <head>
-<meta charset="iso-881877"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
-<title>ONGs</title>
-<link rel="shortcut icon" href="images/rt_logo.ico" type="image/x-icon" />
+<title>ONG Retweet</title>
+<link rel="shortcut icon" href="{% static "ong/images/rt_logo.ico" %}" type="image/x-icon" />
 <!-- Included CSS Files-->
-<link rel="stylesheet" href="stylesheets/style.css">
-<link rel="stylesheet" href="stylesheets/blog.css"><!-- blog stylesheet -->
-<link rel="stylesheet" href="stylesheets/skins/teal.css"><!-- skin color -->
-<link rel="stylesheet" href="stylesheets/responsive.css">
-   
+<link rel="stylesheet" href="{% static "ong/stylesheets/style.css" %}">
+<link rel="stylesheet" href="{% static "ong/stylesheets/blog.css" %}"><!-- blog stylesheet -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/skins/teal.css" %}"><!-- skin color -->
+<link rel="stylesheet" href="{% static "ong/stylesheets/responsive.css" %}">
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->    
 </head>
 <body>
+<!-- HIDDEN PANEL 
+================================================== -->
+<div id="panel">
+	<div class="row">
+		<div class="twelve columns">
+			<img src="{% static "ong/images/rt_logo.png" %}" class="pics" alt="info">
+			<div class="infotext">
+				O mundo n√£o muda sozinho, fa√ßamos nossa parte para salv√°-lo! Retweet essa ideia ^.^
+			</div>
+		</div> 
+	</div>
+</div>
+<p class="slide">
+	<a href="#" class="btn-slide"></a>
+</p>
+
 <!-- HEADER
 ================================================== -->
 <div class="row">	
 		<div class="four columns">
 			<div class="logo">								
-				<a href="index.html"> <img src="images/logotop.png"> </a>
+				<a href="/"> <img src="{% static "ong/images/logotop.png" %}"> </a>
 			</div>	
 		</div>
 		<div class="eight columns noleftmarg">		
@@ -26,19 +46,21 @@
 				<ul class="nav-bar sf-menu">
 				
 					<li class="current">
-					<a href="index.html">Inicio</a>						
+					<a href="/">In√≠cio</a>						
 					</li>
 					
 					<li>
-					<a href="verdes.html">Lugares Verdes</a>
+					<a href="/lugares-verdes/">Lugares Verdes</a>
 						<ul>
-						<li><a href="eventos.html">Eventos</a></li>
+						<li><a href="/eventos/">Eventos</a></li>
 						</ul>
+					<li>
+					
 					<li> 
-					<a href="campanha.html">Campanhas</a>
+					<a href="/campanhas/">Campanhas</a>
 						<ul>
-						<li><a href="campanha1.html">ConheÁa mais</a></li>
-						<li><a href="campanha2.html">FaÁa sua campanha</a></li>
+						<li><a href="/conheca-mais/">Conhe√ßa mais</a></li>
+						<li><a href="/faca-sua-campanha/">Fa√ßa sua campanha</a></li>
 						</ul>
 					</li>
 					
@@ -47,11 +69,11 @@
 					</li>
 					
 					<li>
-					<a href="denuncie.html">Denuncie</a>						
+					<a href="/denuncie/">Denuncie</a>						
 					</li>
 					
 					<li>
-					<a href="contato.html">Contato</a>
+					<a href="/contato/">Contato</a>
 					</li>
 					
 				</ul>
@@ -66,7 +88,7 @@
 	<div class="row">
 		<div class="eight columns">
 			<p class="bread leftalign">
-				Participe vocÍ tambÈm !<!-- You are here: <a href="index.html"> Home</a> / <a href="blogpage2.html">Blog second style</a> -->
+				Participe voc√™ tamb√©m !<!-- You are here: <a href="index.html"> Home</a> / <a href="blogpage2.html">Blog second style</a> -->
 			</p>
 		</div>		
 	</div>
@@ -84,7 +106,7 @@
 			<div class="dots blogdots">
 			</div>
 			<p>
-					O trabalho da SOS MANGUE È na luta pela preservaÁ„o e conscientizaÁ„o ambiental. Ao se ler o nome da ONG, pode-se imaginar que ela age apenas pela preservaÁ„o do Ecossistema Manguezal, mas ela n„o se detÈm sÛ a isso. A SOS MANGUE, desde sua criaÁ„o, vem desenvolvendo uma sÈrie de aÁıes em respeito a preservaÁ„o do Meio Ambiente como um todo. Sua atuaÁ„o no nosso estado vem crescendo gradativamente, entretanto È preciso que cresÁa tambÈm a participaÁ„o da populaÁ„o.
+					O trabalho da SOS MANGUE √© na luta pela preserva√ß√£o e conscientiza√ß√£o ambiental. Ao se ler o nome da ONG, pode-se imaginar que ela age apenas pela preserva√ß√£o do Ecossistema Manguezal, mas ela n√£o se det√©m s√≥ a isso. A SOS MANGUE, desde sua cria√ß√£o, vem desenvolvendo uma s√©rie de a√ß√µes em respeito a preserva√ß√£o do Meio Ambiente como um todo. Sua atua√ß√£o no nosso estado vem crescendo gradativamente, entretanto √© preciso que cres√ßa tamb√©m a participa√ß√£o da popula√ß√£o.
 			</p>
 			<a href="http://sosmanguern.zip.net/" class="saymore">Saiba mais</a>
 			<div class="hr">
@@ -96,10 +118,10 @@
 			<div class="dots blogdots">
 			</div>
 			<p>
-				Foi criada em 2006 por cidad„os preocupados com o principal cart„o postal de Natal: a Praia de Ponta Negra e o Morro do Careca. A SOS Ponta Negra È um movimento popular socioambiental, sem nenhum envolvimento com polÌtica partid·ria, que tem apenas o objetivo de defender e preservar a praia de Ponta Negra sem impedir o desenvolvimento do bairro.
+				Foi criada em 2006 por cidad√£os preocupados com o principal cart√£o postal de Natal: a Praia de Ponta Negra e o Morro do Careca. A SOS Ponta Negra √© um movimento popular socioambiental, sem nenhum envolvimento com pol√≠tica partid√°ria, que tem apenas o objetivo de defender e preservar a praia de Ponta Negra sem impedir o desenvolvimento do bairro.
 			</p>
 			<p>
-				 "Nossa luta È a favor de todo mundo e pela cidade, pela praia, pelo Morro do Careca, pelo turismo, pelo cart„o postal, pelo visual, POR N”S MESMOS e PELO NOSSO FUTURO."
+				 "Nossa luta √© a favor de todo mundo e pela cidade, pela praia, pelo Morro do Careca, pelo turismo, pelo cart√£o postal, pelo visual, POR N√ìS MESMOS e PELO NOSSO FUTURO."
 			</p> <a href="http://www.sospontanegra.org/" class="saymore">Saiba mais</a>
 			<div class="hr">
 			</div>
@@ -107,14 +129,14 @@
 			<div class="circledate">
 				<div class="textcircle"></div>
 			</div>
-			<h4>ONG BAOB¡</h4>
+			<h4>ONG BAOB√Å</h4>
 			<div class="dots blogdots">
 			</div>
 			<p>
-				A Baob· tem como objetivo conscientizar ambientalmente a populaÁ„o norte-rio-grandense. A ONG foi criada em 2003 e, desde ent„o, vem apresentando projetos que defendem o desenvolvimento sustent·vel e buscam dialogar com sociedade sobre sua atitude em relaÁ„o ‡ natureza.
+				A Baob√° tem como objetivo conscientizar ambientalmente a popula√ß√£o norte-rio-grandense. A ONG foi criada em 2003 e, desde ent√£o, vem apresentando projetos que defendem o desenvolvimento sustent√°vel e buscam dialogar com sociedade sobre sua atitude em rela√ß√£o √† natureza.
 			</p>
 			<p>
-				 Na busca do desenvolvimento sustent·vel, a ONG promove passeios ciclÌsticos, principalmente em Natal, para tentar conscientizar os moradores da cidade de que a diminuiÁ„o do uso de automÛveis diminui tambÈm a poluiÁ„o atmosfÈrica. Assim, busca os estimular a utilizar mais a bicicleta como meio de transporte.
+				 Na busca do desenvolvimento sustent√°vel, a ONG promove passeios cicl√≠sticos, principalmente em Natal, para tentar conscientizar os moradores da cidade de que a diminui√ß√£o do uso de autom√≥veis diminui tamb√©m a polui√ß√£o atmosf√©rica. Assim, busca os estimular a utilizar mais a bicicleta como meio de transporte.
 			</p> <a href="https://ongbaoba.wordpress.com/" class="saymore">Saiba mais</a>
 			<div class="hr">
 			</div>
@@ -126,18 +148,18 @@
 			<div class="dots blogdots">
 			</div>
 			<p>
-				A AssociaÁ„o Potiguar Amigos da Natureza surgiu em 1985, com apenas 48 volunt·rios e atuando na defesa do meio ambiente e no desenvolvimento tecnolÛgico voltado para a agricultura alternativa. Atualmente, trabalha focando mais nas questıes socioambientais, promovendo projetos e campanhas para a melhora da qualidade de vida dos habitantes de Natal.
+				A Associa√ß√£o Potiguar Amigos da Natureza surgiu em 1985, com apenas 48 volunt√°rios e atuando na defesa do meio ambiente e no desenvolvimento tecnol√≥gico voltado para a agricultura alternativa. Atualmente, trabalha focando mais nas quest√µes socioambientais, promovendo projetos e campanhas para a melhora da qualidade de vida dos habitantes de Natal.
 			</p>
 			<p>
-				 Uma das campanhas È a BICICLETADA NATAL, que acontece todo ˙ltimo s·bado do mÍs, ‡s 15h, em frente ao IFRN ñ Campus Central, na Avenida Salgado Filho. A ideia da campanha È convencer as pessoas a manterem uma vida saud·vel e preservar o ar t„o puro da cidade.
+				 Uma das campanhas √© a BICICLETADA NATAL, que acontece todo √∫ltimo s√°bado do m√™s, √†s 15h, em frente ao IFRN ¬ñ Campus Central, na Avenida Salgado Filho. A ideia da campanha √© convencer as pessoas a manterem uma vida saud√°vel e preservar o ar t√£o puro da cidade.
 			</p> <a href="https://ongaspoan.wordpress.com" class="saymore">Saiba mais</a>
 			<div class="hr">
 			</div>
 			<br/>
 			<ul class="pagination">
 				<li class="arrow unavailable"><a href="">&laquo;</a></li>
-				<li class="current"><a href="ongs.html">1</a></li>
-				<li><a href="ongs2.html">2</a></li>
+				<li class="current"><a href="/ongs/">1</a></li>
+				<li><a href="/ongs-2/">2</a></li>
 			<!--	<li><a href="">4</a></li>
 				<li class="unavailable"><a href="">&hellip;</a></li>
 				<li><a href="">12</a></li>
@@ -152,43 +174,43 @@
 				<ul class="ei-slider-large">
 					<h6> Carros movidos a energia solar </h6>
 					<li>
-					<p> Estes carros est„o sendo aprimorados e daqui a alguns anos ser„o a grande novidade nas ruas de muitas cidades.</p>
+					<p> Estes carros est√£o sendo aprimorados e daqui a alguns anos ser√£o a grande novidade nas ruas de muitas cidades.</p>
 					</li>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
 							<div class="inner2">
-								<a class="projectdetail" href="docs/artigo8.html"> Continuar lendo </a>
+								<a class="projectdetail" href="/carros-movidos-a-energia-solar/"> Continuar lendo </a>
 							</div>
 						</div>			
-						<img src="images/carro.jpg" alt="image01" class="responsiveslide"> 
+						<img src="{% static "ong/images/carro.jpg" %}" alt="image01" class="responsiveslide"> 
 					</div>				
 				</ul>	<br/>
 				<ul class="ei-slider-large">
 					<h6> Movimentos Ambientais aqui no estado</h6>
 					<li>
-					<p> O movimento ìSalve os manguesî visita a zona de proteÁ„o ambiental natalense.</p>
+					<p> O movimento Salve os mangues visita a zona de prote√ß√£o ambiental natalense.</p>
 					</li>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
 							<div class="inner2">
-								<a class="projectdetail" href="docs/artigo7.html"> Continuar lendo </a>
+								<a class="projectdetail" href="/salve-os-mangues/"> Continuar lendo </a>
 							</div>
 						</div>			
-						<img src="images/mangue.png" alt="image01" class="responsiveslide"> 
+						<img src="{% static "ong/images/mangue.png" %}" alt="image01" class="responsiveslide"> 
 					</div>				
 				</ul>	<br/>
 				<ul class="ei-slider-large">
-					<h6> OAB/RN une-se a CAU/RN para evento sustent·vel </h6>
+					<h6> OAB/RN une-se a CAU/RN para evento sustent√°vel </h6>
 					<li>
-					<p> Evento promovido pela OAB tem como tema "Como a gest„o da ·gua pode contribuir para o desenvolvimento sustent·vel do RN?î. </p>
+					<p> Evento promovido pela OAB tem como tema "Como a gest√£o da √°gua pode contribuir para o desenvolvimento sustent√°vel do RN?¬î. </p>
 					</li>
 					<div class="portofoliothumb">
 						<div class="portofoliothumboverlay">
 							<div class="inner2">
-								<a class="projectdetail" href="docs/artigo11.html"> Continuar lendo </a>
+								<a class="projectdetail" href="/oab-e-cau-se-unem-para-evento-sustentavel/"> Continuar lendo </a>
 							</div>
 						</div>			
-						<img src="images/oab.png" alt="image01" class="responsiveslide"> 
+						<img src="{% static "ong/images/oab.png" %}" alt="image01" class="responsiveslide"> 
 					</div>					
 				</ul>				
 			</div>
@@ -213,12 +235,12 @@
 	<h1>COMPARTILHE</h1>
 		<div class="social facebook">
 			<a href="https://www.facebook.com/ongretweet" target="_blank">
-			<img src="images/socialpack/facebooka.png"/>
+			<img src="{% static "ong/images/socialpack/facebooka.png" %}"/>
 			</a>			
 		</div>
 		<div class="social facebook">
 			<a href="https://twitter.com/ongretweet" target="_blank">
-			<img src="images/socialpack/twitter.png"/>
+			<img src="{% static "ong/images/socialpack/twitter.png" %}"/>
 			</a>			
 		</div>
 		<h5 class="subheader">ONG Retweet</h5>
@@ -227,11 +249,11 @@
 	<h1>APOIO</h1>
 		
 		
-			<img src="images/logo_if.png">				
+			<img src="{% static "ong/images/logo_if.png" %}">				
 	</div>
 	<div class="four columns">
-		<h5 class="subheader">OrganizaÁ„o do Projeto</h5>
-		<p> Professora L˙cia Costa </p>
+		<h5 class="subheader">Organiza√ß√£o do Projeto</h5>
+		<p> Professora L√∫cia Costa </p>
 		<p> Sociologia III </p>		
 	</footer>
 </div>
@@ -243,16 +265,17 @@
 </div>
 <!-- JAVASCRIPTS 
 ================================================== -->
-<script src="javascripts/foundation.min.js"></script>
-<script src="javascripts/jquery.cycle.js"></script>
-<script src="javascripts/app.js"></script>
-<script src="javascripts/modernizr.foundation.js"></script>
-<script src="javascripts/slidepanel.js"></script>
-<script src="javascripts/scrolltotop.js"></script>
-<script src="javascripts/hoverIntent.js"></script>
-<script src="javascripts/superfish.js"></script>
-<script src="javascripts/responsivemenu.js"></script>
-<script src="javascripts/jquery.tweet.js"></script>
-<script src="javascripts/twitterusername.js"></script>
+<!-- Javascript files placed here for faster loading -->
+<script src="{% static "ong/javascripts/jquery.cycle.js" %}"></script>
+<script src="{% static "ong/javascripts/foundation.min.js" %}"></script>
+<script src="{% static "ong/javascripts/app.js" %}"></script>
+<script src="{% static "ong/javascripts/modernizr.foundation.js" %}"></script>
+<script src="{% static "ong/javascripts/slidepanel.js" %}"></script>
+<script src="{% static "ong/javascripts/scrolltotop.js" %}"></script>
+<script src="{% static "ong/javascripts/hoverIntent.js" %}"></script>
+<script src="{% static "ong/javascripts/superfish.js" %}"></script>
+<script src="{% static "ong/javascripts/responsivemenu.js" %}"></script>
+<script src="{% static "ong/javascripts/jquery.tweet.js" %}"></script>
+<script src="{% static "ong/javascripts/twitterusername.js" %}"></script>
 </body>
 </html>
