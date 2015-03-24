@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load widget_tweaks %}
 
-<html class="no-js" lang="en">
+<html class="no-js" lang="pt-br">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
@@ -101,21 +102,18 @@
 				    
 					
 				    {% csrf_token %}
-					<div class="six columns noleftmargin">
 				    
 					{{ nome.label }}
-					{{ nome }}
+					{{ nome | attr:"placeholder:Seu nome*" }}
 					{{ nome.errors }}
-					</div>
+					
 
-					<div class="six columns ">
 					{{ email.label }}
-					{{ email }}
+					{{ email | attr:"placeholder:Seu e-mail*" }}
 					{{ email.errors }}
-					</div>
 
 					{{ mensagem.label }}
-					{{ mensagem }}
+					{{ mensagem | attr:"placeholder:Deixe sua mensagem para nós*" }}
 					{{ mensagem.errors }}
 				    
 					<input type="submit" id="submit" class="readmore" value="Enviar">

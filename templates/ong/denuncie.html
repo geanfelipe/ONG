@@ -100,19 +100,19 @@
 				<div class="form">
 				    {% csrf_token %}
 					{{ title.label }}
-					{{ title | attr:"placeholder:Dê um título a sua Denúncia"}}
+					{{ title | attr:"placeholder:Dê um título a sua Denúncia*"}}
 					{{ title.errors }}
 
 					{{ email.label }}
-					{{ email | attr:"placeholder:Seu e-mail" }}
+					{{ email | attr:"placeholder:Seu e-mail*" }}
 					{{ email.errors }}
 
 					{{ text.label }}
-					{{ text | attr:"placeholder:Deixe sua Denúncia Aqui" }}
+					{{ text | attr:"placeholder:Deixe sua Denúncia aqui*" }}
 					{{ text.errors }}
 
 					{{ category.label }}
-					{{ category | attr:"placeholder:Do que se trata? Resume em uma palavra"}}
+					{{ category | attr:"placeholder:Do que se trata? Resuma em uma palavra*"}}
 					{{ category.errors }}
 					<input type="submit" id="submit" class="readmore" value="Enviar">
 				</div>
