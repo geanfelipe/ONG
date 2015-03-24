@@ -50,6 +50,9 @@ class Campanhas(models.Model):
 	email = models.EmailField()
 	mensagem = models.TextField()
 
+	def __unicode__(self):
+		return 'Campanha de ' + self.nome
+
 class Denuncias(models.Model):
 	email = models.EmailField()
 	title = models.CharField(max_length=128)
