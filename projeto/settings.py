@@ -79,8 +79,7 @@ WSGI_APPLICATION = 'projeto.wsgi.application'
 
 #$ ./manage.py migrate
 #$ ./manage.py migrate --database=local
-DATABASES['default'] =  dj_database_url.config()
-
+DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
 """
 DATABASES = {
     'default': {
